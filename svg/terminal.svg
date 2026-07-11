@@ -1,0 +1,345 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 680" role="img" aria-label="Nishant's Terminal Session">
+  <title>Terminal — nishant@dev Interactive Session</title>
+  <defs>
+    <style>
+      /* ============================================
+         TERMINAL.SVG — Linux Terminal Simulator
+         Theme: Dark Hacker + Matrix + Cyberpunk
+         Author: Nishant (itsnishant089)
+         Pure CSS animations, no JavaScript.
+         ============================================ */
+
+      @keyframes cursor-blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes scanline {
+        0% { transform: translateY(-700px); }
+        100% { transform: translateY(700px); }
+      }
+
+      @keyframes reveal-1 { 0%, 5% { opacity: 0; } 6%, 100% { opacity: 1; } }
+      @keyframes reveal-2 { 0%, 10% { opacity: 0; } 11%, 100% { opacity: 1; } }
+      @keyframes reveal-3 { 0%, 15% { opacity: 0; } 16%, 100% { opacity: 1; } }
+      @keyframes reveal-4 { 0%, 20% { opacity: 0; } 21%, 100% { opacity: 1; } }
+      @keyframes reveal-5 { 0%, 28% { opacity: 0; } 29%, 100% { opacity: 1; } }
+      @keyframes reveal-6 { 0%, 33% { opacity: 0; } 34%, 100% { opacity: 1; } }
+      @keyframes reveal-7 { 0%, 38% { opacity: 0; } 39%, 100% { opacity: 1; } }
+      @keyframes reveal-8 { 0%, 43% { opacity: 0; } 44%, 100% { opacity: 1; } }
+      @keyframes reveal-9 { 0%, 50% { opacity: 0; } 51%, 100% { opacity: 1; } }
+      @keyframes reveal-10 { 0%, 55% { opacity: 0; } 56%, 100% { opacity: 1; } }
+      @keyframes reveal-11 { 0%, 60% { opacity: 0; } 61%, 100% { opacity: 1; } }
+      @keyframes reveal-12 { 0%, 65% { opacity: 0; } 66%, 100% { opacity: 1; } }
+      @keyframes reveal-13 { 0%, 68% { opacity: 0; } 69%, 100% { opacity: 1; } }
+      @keyframes reveal-14 { 0%, 72% { opacity: 0; } 73%, 100% { opacity: 1; } }
+      @keyframes reveal-15 { 0%, 76% { opacity: 0; } 77%, 100% { opacity: 1; } }
+      @keyframes reveal-16 { 0%, 80% { opacity: 0; } 81%, 100% { opacity: 1; } }
+      @keyframes reveal-17 { 0%, 83% { opacity: 0; } 84%, 100% { opacity: 1; } }
+      @keyframes reveal-18 { 0%, 86% { opacity: 0; } 87%, 100% { opacity: 1; } }
+      @keyframes reveal-19 { 0%, 89% { opacity: 0; } 90%, 100% { opacity: 1; } }
+      @keyframes reveal-20 { 0%, 92% { opacity: 0; } 93%, 100% { opacity: 1; } }
+      @keyframes reveal-21 { 0%, 95% { opacity: 0; } 96%, 100% { opacity: 1; } }
+
+      @keyframes border-pulse {
+        0%, 100% { stroke: #00ff88; stroke-opacity: 0.3; }
+        50% { stroke: #00c6ff; stroke-opacity: 0.6; }
+      }
+
+      /* Base */
+      .bg { fill: #0d1117; }
+      .frame {
+        fill: none;
+        stroke: #00ff88;
+        stroke-width: 1.5;
+        rx: 12;
+        animation: border-pulse 4s ease-in-out infinite;
+      }
+      .titlebar { fill: #111827; }
+      .titlebar-line { stroke: #1e293b; stroke-width: 1; }
+      .btn-r { fill: #ff5f56; }
+      .btn-y { fill: #ffbd2e; }
+      .btn-g { fill: #27c93f; }
+      .title-text {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 11px;
+        fill: #6b7280;
+        text-anchor: middle;
+      }
+
+      /* Text classes */
+      .prompt {
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+        fill: #00c6ff;
+      }
+      .cmd {
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+        fill: #e2e8f0;
+      }
+      .out {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #00ff88;
+      }
+      .out-dim {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #00ff88;
+        opacity: 0.6;
+      }
+      .out-cyan {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #00c6ff;
+      }
+      .out-white {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #e2e8f0;
+      }
+      .out-yellow {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #ffbd2e;
+      }
+      .out-red {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #ff5f56;
+      }
+      .out-gray {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #6b7280;
+      }
+      .comment {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #4b5563;
+      }
+      .ascii-logo {
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        fill: #00ff88;
+      }
+      .ascii-logo-bright {
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        fill: #00ff88;
+        opacity: 0.8;
+      }
+      .cursor {
+        fill: #00ff88;
+        animation: cursor-blink 1s step-end infinite;
+      }
+      .scanline-bar {
+        fill: rgba(0, 255, 136, 0.025);
+        animation: scanline 8s linear infinite;
+      }
+
+      /* Reveal animation classes */
+      .r1 { opacity: 0; animation: reveal-1 20s ease-out forwards; }
+      .r2 { opacity: 0; animation: reveal-2 20s ease-out forwards; }
+      .r3 { opacity: 0; animation: reveal-3 20s ease-out forwards; }
+      .r4 { opacity: 0; animation: reveal-4 20s ease-out forwards; }
+      .r5 { opacity: 0; animation: reveal-5 20s ease-out forwards; }
+      .r6 { opacity: 0; animation: reveal-6 20s ease-out forwards; }
+      .r7 { opacity: 0; animation: reveal-7 20s ease-out forwards; }
+      .r8 { opacity: 0; animation: reveal-8 20s ease-out forwards; }
+      .r9 { opacity: 0; animation: reveal-9 20s ease-out forwards; }
+      .r10 { opacity: 0; animation: reveal-10 20s ease-out forwards; }
+      .r11 { opacity: 0; animation: reveal-11 20s ease-out forwards; }
+      .r12 { opacity: 0; animation: reveal-12 20s ease-out forwards; }
+      .r13 { opacity: 0; animation: reveal-13 20s ease-out forwards; }
+      .r14 { opacity: 0; animation: reveal-14 20s ease-out forwards; }
+      .r15 { opacity: 0; animation: reveal-15 20s ease-out forwards; }
+      .r16 { opacity: 0; animation: reveal-16 20s ease-out forwards; }
+      .r17 { opacity: 0; animation: reveal-17 20s ease-out forwards; }
+      .r18 { opacity: 0; animation: reveal-18 20s ease-out forwards; }
+      .r19 { opacity: 0; animation: reveal-19 20s ease-out forwards; }
+      .r20 { opacity: 0; animation: reveal-20 20s ease-out forwards; }
+      .r21 { opacity: 0; animation: reveal-21 20s ease-out forwards; }
+
+      /* CRT scanline pattern */
+      .crt-lines { opacity: 0.4; }
+    </style>
+
+    <!-- Filters -->
+    <filter id="term-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="term-shadow" x="-5%" y="-3%" width="110%" height="112%">
+      <feDropShadow dx="0" dy="6" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- CRT line pattern -->
+    <pattern id="crt-pattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="transparent"/>
+      <rect y="2" width="4" height="2" fill="rgba(0,0,0,0.06)"/>
+    </pattern>
+  </defs>
+
+  <!-- Full background -->
+  <rect class="bg" width="850" height="680"/>
+
+  <!-- Terminal window -->
+  <g filter="url(#term-shadow)">
+    <rect class="bg" x="15" y="15" width="820" height="650" rx="12"/>
+    <rect class="frame" x="15" y="15" width="820" height="650"/>
+
+    <!-- Title bar -->
+    <rect class="titlebar" x="15" y="15" width="820" height="38" rx="12"/>
+    <rect class="titlebar" x="15" y="42" width="820" height="11"/>
+    <line class="titlebar-line" x1="15" y1="53" x2="835" y2="53"/>
+    <circle class="btn-r" cx="38" cy="34" r="6.5"/>
+    <circle class="btn-y" cx="58" cy="34" r="6.5"/>
+    <circle class="btn-g" cx="78" cy="34" r="6.5"/>
+    <text class="title-text" x="425" y="38">nishant@dev:~</text>
+  </g>
+
+  <!-- Scanline overlay -->
+  <rect class="scanline-bar" x="15" y="53" width="820" height="6"/>
+  <rect x="15" y="53" width="820" height="612" fill="url(#crt-pattern)" class="crt-lines"/>
+
+  <!-- Terminal content -->
+  <g transform="translate(35, 78)">
+
+    <!-- =========== COMMAND 1: ASCII LOGO =========== -->
+    <g class="r1">
+      <text class="prompt" x="0" y="0">nishant@dev</text>
+      <text class="out-gray" x="84" y="0">:</text>
+      <text class="out-cyan" x="90" y="0">~</text>
+      <text class="out-gray" x="98" y="0">$</text>
+      <text class="cmd" x="108" y="0">cat logo.ascii</text>
+    </g>
+
+    <!-- ASCII Logo -->
+    <g class="r2" filter="url(#term-glow)">
+      <text class="ascii-logo" x="0" y="22"> ███╗   ██╗██╗███████╗██╗  ██╗ █████╗ ███╗   ██╗████████╗</text>
+      <text class="ascii-logo" x="0" y="34"> ████╗  ██║██║██╔════╝██║  ██║██╔══██╗████╗  ██║╚══██╔══╝</text>
+      <text class="ascii-logo" x="0" y="46"> ██╔██╗ ██║██║███████╗███████║███████║██╔██╗ ██║   ██║</text>
+      <text class="ascii-logo" x="0" y="58"> ██║╚██╗██║██║╚════██║██╔══██║██╔══██║██║╚██╗██║   ██║</text>
+      <text class="ascii-logo" x="0" y="70"> ██║ ╚████║██║███████║██║  ██║██║  ██║██║ ╚████║   ██║</text>
+      <text class="ascii-logo" x="0" y="82"> ╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝</text>
+    </g>
+
+    <g class="r3">
+      <text class="out-dim" x="0" y="100">  Full-Stack Developer | 4x Hackathon Winner | Builder</text>
+    </g>
+
+    <!-- =========== COMMAND 2: whoami =========== -->
+    <g class="r4">
+      <text class="prompt" x="0" y="124">nishant@dev</text>
+      <text class="out-gray" x="84" y="124">:</text>
+      <text class="out-cyan" x="90" y="124">~</text>
+      <text class="out-gray" x="98" y="124">$</text>
+      <text class="cmd" x="108" y="124">whoami</text>
+    </g>
+    <g class="r5">
+      <text class="out" x="0" y="142">nishant</text>
+    </g>
+
+    <!-- =========== COMMAND 3: cat about.txt =========== -->
+    <g class="r6">
+      <text class="prompt" x="0" y="166">nishant@dev</text>
+      <text class="out-gray" x="84" y="166">:</text>
+      <text class="out-cyan" x="90" y="166">~</text>
+      <text class="out-gray" x="98" y="166">$</text>
+      <text class="cmd" x="108" y="166">cat about.txt</text>
+    </g>
+    <g class="r7">
+      <text class="out" x="0" y="184">Name:       Nishant</text>
+      <text class="out" x="0" y="198">Role:       Full-Stack Developer</text>
+      <text class="out" x="0" y="212">Education:  B.Tech CSE @ DCRUST Murthal</text>
+      <text class="out" x="0" y="226">Diploma:    Computer Eng. @ GPMA (80.85%)</text>
+      <text class="out" x="0" y="240">Location:   Hisar, Haryana, India</text>
+      <text class="out" x="0" y="254">Website:    itsnishant.com</text>
+      <text class="out" x="0" y="268">Focus:      Building products with real users</text>
+    </g>
+
+    <!-- =========== COMMAND 4: ls projects/ =========== -->
+    <g class="r9">
+      <text class="prompt" x="0" y="292">nishant@dev</text>
+      <text class="out-gray" x="84" y="292">:</text>
+      <text class="out-cyan" x="90" y="292">~</text>
+      <text class="out-gray" x="98" y="292">$</text>
+      <text class="cmd" x="108" y="292">ls projects/</text>
+    </g>
+    <g class="r10">
+      <text class="out-cyan" x="0" y="310">btechleet.com/</text>
+      <text class="out-gray" x="140" y="310">All-India B.Tech Lateral Entry Platform</text>
+    </g>
+    <g class="r11">
+      <text class="out-cyan" x="0" y="326">hsbteleet.com/</text>
+      <text class="out-gray" x="140" y="326">LEET &amp; HSBTE Exam Platform — 26.5K+ clicks</text>
+    </g>
+    <g class="r12">
+      <text class="out-cyan" x="0" y="342">roshni-creations/</text>
+      <text class="out-gray" x="140" y="342">Jewellery E-Commerce with 3D Previews</text>
+    </g>
+    <g class="r13">
+      <text class="out-cyan" x="0" y="358">edgepay/</text>
+      <text class="out-gray" x="140" y="358">Offline-first UPI for Rural India</text>
+    </g>
+
+    <!-- =========== COMMAND 5: git status =========== -->
+    <g class="r14">
+      <text class="prompt" x="0" y="386">nishant@dev</text>
+      <text class="out-gray" x="84" y="386">:</text>
+      <text class="out-cyan" x="90" y="386">~</text>
+      <text class="out-gray" x="98" y="386">$</text>
+      <text class="cmd" x="108" y="386">git log --oneline -5</text>
+    </g>
+    <g class="r15">
+      <text class="out-yellow" x="0" y="404">a1b2c3d</text>
+      <text class="out-white" x="65" y="404">feat: launched btechleet.com nationwide</text>
+    </g>
+    <g class="r16">
+      <text class="out-yellow" x="0" y="418">e4f5g6h</text>
+      <text class="out-white" x="65" y="418">fix: optimized hsbteleet quiz engine</text>
+    </g>
+    <g class="r17">
+      <text class="out-yellow" x="0" y="432">i7j8k9l</text>
+      <text class="out-white" x="65" y="432">feat: added AI chatbot via Gemini API</text>
+    </g>
+    <g class="r18">
+      <text class="out-yellow" x="0" y="446">m0n1o2p</text>
+      <text class="out-white" x="65" y="446">ship: roshni-creations 3D product viewer</text>
+    </g>
+    <g class="r19">
+      <text class="out-yellow" x="0" y="460">q3r4s5t</text>
+      <text class="out-white" x="65" y="460">win: 1st place at Orbix Hackathon</text>
+    </g>
+
+    <!-- =========== COMMAND 6: npm run build =========== -->
+    <g class="r20">
+      <text class="prompt" x="0" y="488">nishant@dev</text>
+      <text class="out-gray" x="84" y="488">:</text>
+      <text class="out-cyan" x="90" y="488">~</text>
+      <text class="out-gray" x="98" y="488">$</text>
+      <text class="cmd" x="108" y="488">npm run build</text>
+    </g>
+    <g class="r21">
+      <text class="out" x="0" y="506">  ✓ Compiled successfully in 2.4s</text>
+      <text class="out" x="0" y="520">  ✓ 4 projects deployed</text>
+      <text class="out" x="0" y="534">  ✓ 250+ pages shipped</text>
+      <text class="out" x="0" y="548">  ✓ 26.5K+ search clicks achieved</text>
+      <text class="out" x="0" y="562">  ✓ 0 errors. Ready for production.</text>
+    </g>
+
+    <!-- Final cursor -->
+    <g class="r21">
+      <text class="prompt" x="0" y="588">nishant@dev</text>
+      <text class="out-gray" x="84" y="588">:</text>
+      <text class="out-cyan" x="90" y="588">~</text>
+      <text class="out-gray" x="98" y="588">$</text>
+      <rect class="cursor" x="108" y="577" width="8" height="15"/>
+    </g>
+  </g>
+</svg>

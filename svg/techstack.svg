@@ -1,0 +1,568 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 920" role="img" aria-label="Nishant's Tech Stack">
+  <title>Tech Stack — Languages, Frameworks, Tools</title>
+  <defs>
+    <style>
+      /* ============================================
+         TECHSTACK.SVG — Animated Technology Cards
+         Theme: Dark Hacker + Cyberpunk + Glassmorphism
+         Author: Nishant (itsnishant089)
+         ============================================ */
+
+      @keyframes card-glow-1 {
+        0%, 100% { stroke-opacity: 0.2; }
+        50% { stroke-opacity: 0.6; }
+      }
+      @keyframes card-glow-2 {
+        0%, 100% { stroke-opacity: 0.2; }
+        33% { stroke-opacity: 0.5; }
+        66% { stroke-opacity: 0.3; }
+      }
+      @keyframes float-1 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
+      }
+      @keyframes float-2 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
+      }
+      @keyframes icon-pulse {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+      }
+      @keyframes line-scan {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(850px); }
+      }
+      @keyframes title-glow {
+        0%, 100% { fill: #00ff88; }
+        50% { fill: #00c6ff; }
+      }
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes border-shimmer {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -40; }
+      }
+
+      /* Base */
+      .bg { fill: #0d1117; }
+      .section-title {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 18px;
+        font-weight: bold;
+        fill: #00ff88;
+        animation: title-glow 4s ease-in-out infinite;
+      }
+      .section-subtitle {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #6b7280;
+      }
+      .category-label {
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+        fill: #00c6ff;
+        font-weight: bold;
+      }
+      .category-line {
+        stroke: #00c6ff;
+        stroke-width: 1;
+        opacity: 0.3;
+      }
+
+      /* Card styles */
+      .card-bg {
+        fill: #111827;
+        rx: 10;
+        ry: 10;
+        opacity: 0.8;
+      }
+      .card-border {
+        fill: none;
+        stroke: #00ff88;
+        stroke-width: 1;
+        rx: 10;
+        ry: 10;
+        animation: card-glow-1 3s ease-in-out infinite;
+      }
+      .card-border-alt {
+        fill: none;
+        stroke: #00c6ff;
+        stroke-width: 1;
+        rx: 10;
+        ry: 10;
+        animation: card-glow-2 4s ease-in-out infinite;
+      }
+      .card-shimmer {
+        fill: none;
+        stroke: #00ff88;
+        stroke-width: 0.5;
+        stroke-dasharray: 8 12;
+        rx: 10;
+        ry: 10;
+        opacity: 0.3;
+        animation: border-shimmer 3s linear infinite;
+      }
+
+      /* Icon and text */
+      .tech-icon {
+        font-family: 'Courier New', monospace;
+        font-size: 22px;
+        fill: #00ff88;
+        text-anchor: middle;
+        animation: icon-pulse 2s ease-in-out infinite;
+      }
+      .tech-name {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 11px;
+        fill: #e2e8f0;
+        text-anchor: middle;
+      }
+      .tech-label {
+        font-family: 'Courier New', monospace;
+        font-size: 9px;
+        fill: #6b7280;
+        text-anchor: middle;
+      }
+
+      /* Float animations for card groups */
+      .float-group-1 { animation: float-1 5s ease-in-out infinite; }
+      .float-group-2 { animation: float-2 6s ease-in-out infinite; }
+      .float-group-3 { animation: float-1 7s ease-in-out infinite; }
+      .float-group-4 { animation: float-2 5.5s ease-in-out infinite; }
+
+      /* Accent elements */
+      .scan-line {
+        fill: #00ff88;
+        height: 1px;
+        opacity: 0.1;
+        animation: line-scan 6s linear infinite;
+      }
+      .corner-accent {
+        stroke: #00ff88;
+        stroke-width: 1.5;
+        fill: none;
+        opacity: 0.4;
+      }
+      .dot-accent {
+        fill: #00ff88;
+        opacity: 0.3;
+      }
+
+      /* Neon separator */
+      .neon-sep {
+        stroke: #00ff88;
+        stroke-width: 1;
+        opacity: 0.15;
+      }
+    </style>
+
+    <!-- Glow filter -->
+    <filter id="ts-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="ts-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="card-inner-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="softblur"/>
+      <feMerge>
+        <feMergeNode in="softblur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="850" height="920"/>
+
+  <!-- Corner accents -->
+  <polyline class="corner-accent" points="15,35 15,15 35,15"/>
+  <polyline class="corner-accent" points="815,15 835,15 835,35"/>
+  <polyline class="corner-accent" points="835,885 835,905 815,905"/>
+  <polyline class="corner-accent" points="35,905 15,905 15,885"/>
+
+  <!-- Header section -->
+  <g transform="translate(425, 50)" filter="url(#ts-glow)">
+    <text class="section-title" text-anchor="middle" y="0">// TECH_STACK</text>
+    <text class="section-subtitle" text-anchor="middle" y="22">Tools and technologies I use to build production-grade products</text>
+  </g>
+
+  <!-- Separator line -->
+  <line class="neon-sep" x1="100" y1="82" x2="750" y2="82"/>
+
+  <!-- ==========================================
+       CATEGORY 1: PROGRAMMING LANGUAGES
+       ========================================== -->
+  <g transform="translate(30, 100)">
+    <text class="category-label" x="0" y="14">&#x276F; Programming Languages</text>
+    <line class="category-line" x1="190" y1="10" x2="790" y2="10"/>
+  </g>
+
+  <g class="float-group-1" transform="translate(30, 130)">
+    <!-- Python -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="0" y="0" width="120" height="80"/>
+      <rect class="card-border" x="0" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="0" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="60" y="40">&#x1F40D;</text>
+      <text class="tech-name" x="60" y="62">Python</text>
+      <text class="tech-label" x="60" y="74">Primary</text>
+    </g>
+
+    <!-- C/C++ -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="140" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="140" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="140" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="200" y="40">&#x2699;</text>
+      <text class="tech-name" x="200" y="62">C / C++</text>
+      <text class="tech-label" x="200" y="74">Systems</text>
+    </g>
+
+    <!-- TypeScript -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="280" y="0" width="120" height="80"/>
+      <rect class="card-border" x="280" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="280" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="340" y="40">TS</text>
+      <text class="tech-name" x="340" y="62">TypeScript</text>
+      <text class="tech-label" x="340" y="74">Typed JS</text>
+    </g>
+
+    <!-- JavaScript -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="420" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="420" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="420" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="480" y="40">JS</text>
+      <text class="tech-name" x="480" y="62">JavaScript</text>
+      <text class="tech-label" x="480" y="74">Core</text>
+    </g>
+
+    <!-- SQL -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="560" y="0" width="120" height="80"/>
+      <rect class="card-border" x="560" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="560" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="620" y="40">&#x1F4BE;</text>
+      <text class="tech-name" x="620" y="62">SQL</text>
+      <text class="tech-label" x="620" y="74">Database</text>
+    </g>
+
+    <!-- HTML/CSS -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="700" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="700" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="700" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="760" y="40">&#x1F310;</text>
+      <text class="tech-name" x="760" y="62">HTML/CSS</text>
+      <text class="tech-label" x="760" y="74">Markup</text>
+    </g>
+  </g>
+
+  <!-- ==========================================
+       CATEGORY 2: FRONTEND & FRAMEWORKS
+       ========================================== -->
+  <g transform="translate(30, 240)">
+    <text class="category-label" x="0" y="14">&#x276F; Frontend &amp; Frameworks</text>
+    <line class="category-line" x1="190" y1="10" x2="790" y2="10"/>
+  </g>
+
+  <g class="float-group-2" transform="translate(30, 270)">
+    <!-- React -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="0" y="0" width="120" height="80"/>
+      <rect class="card-border" x="0" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="0" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="60" y="40">&#x269B;</text>
+      <text class="tech-name" x="60" y="62">React</text>
+      <text class="tech-label" x="60" y="74">UI Library</text>
+    </g>
+
+    <!-- Next.js -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="140" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="140" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="140" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="200" y="40">N</text>
+      <text class="tech-name" x="200" y="62">Next.js</text>
+      <text class="tech-label" x="200" y="74">Framework</text>
+    </g>
+
+    <!-- React Native -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="280" y="0" width="120" height="80"/>
+      <rect class="card-border" x="280" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="280" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="340" y="40">&#x1F4F1;</text>
+      <text class="tech-name" x="340" y="62">React Native</text>
+      <text class="tech-label" x="340" y="74">Mobile</text>
+    </g>
+
+    <!-- Tailwind CSS -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="420" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="420" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="420" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="480" y="40">&#x1F3A8;</text>
+      <text class="tech-name" x="480" y="62">Tailwind CSS</text>
+      <text class="tech-label" x="480" y="74">Utility CSS</text>
+    </g>
+
+    <!-- Vite -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="560" y="0" width="120" height="80"/>
+      <rect class="card-border" x="560" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="560" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="620" y="40">&#x26A1;</text>
+      <text class="tech-name" x="620" y="62">Vite</text>
+      <text class="tech-label" x="620" y="74">Build Tool</text>
+    </g>
+
+    <!-- Framer Motion -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="700" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="700" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="700" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="760" y="40">&#x1F4AB;</text>
+      <text class="tech-name" x="760" y="62">Framer Motion</text>
+      <text class="tech-label" x="760" y="74">Animation</text>
+    </g>
+  </g>
+
+  <!-- ==========================================
+       CATEGORY 3: BACKEND & DATABASES
+       ========================================== -->
+  <g transform="translate(30, 380)">
+    <text class="category-label" x="0" y="14">&#x276F; Backend &amp; Databases</text>
+    <line class="category-line" x1="190" y1="10" x2="790" y2="10"/>
+  </g>
+
+  <g class="float-group-3" transform="translate(30, 410)">
+    <!-- Supabase -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="0" y="0" width="120" height="80"/>
+      <rect class="card-border" x="0" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="0" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="60" y="40">&#x1F6E1;</text>
+      <text class="tech-name" x="60" y="62">Supabase</text>
+      <text class="tech-label" x="60" y="74">BaaS</text>
+    </g>
+
+    <!-- Firebase -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="140" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="140" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="140" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="200" y="40">&#x1F525;</text>
+      <text class="tech-name" x="200" y="62">Firebase</text>
+      <text class="tech-label" x="200" y="74">Realtime DB</text>
+    </g>
+
+    <!-- PostgreSQL -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="280" y="0" width="120" height="80"/>
+      <rect class="card-border" x="280" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="280" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="340" y="40">&#x1F418;</text>
+      <text class="tech-name" x="340" y="62">PostgreSQL</text>
+      <text class="tech-label" x="340" y="74">Relational</text>
+    </g>
+
+    <!-- Prisma -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="420" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="420" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="420" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="480" y="40">&#x25B3;</text>
+      <text class="tech-name" x="480" y="62">Prisma</text>
+      <text class="tech-label" x="480" y="74">ORM</text>
+    </g>
+
+    <!-- Redis -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="560" y="0" width="120" height="80"/>
+      <rect class="card-border" x="560" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="560" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="620" y="40">&#x1F534;</text>
+      <text class="tech-name" x="620" y="62">Redis</text>
+      <text class="tech-label" x="620" y="74">Cache</text>
+    </g>
+
+    <!-- REST APIs -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="700" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="700" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="700" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="760" y="40">&#x1F4E1;</text>
+      <text class="tech-name" x="760" y="62">REST APIs</text>
+      <text class="tech-label" x="760" y="74">Interface</text>
+    </g>
+  </g>
+
+  <!-- ==========================================
+       CATEGORY 4: CLOUD, DEVOPS & TOOLS
+       ========================================== -->
+  <g transform="translate(30, 520)">
+    <text class="category-label" x="0" y="14">&#x276F; Cloud, DevOps &amp; Tools</text>
+    <line class="category-line" x1="190" y1="10" x2="790" y2="10"/>
+  </g>
+
+  <g class="float-group-4" transform="translate(30, 550)">
+    <!-- Vercel -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="0" y="0" width="120" height="80"/>
+      <rect class="card-border" x="0" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="0" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="60" y="40">&#x25B2;</text>
+      <text class="tech-name" x="60" y="62">Vercel</text>
+      <text class="tech-label" x="60" y="74">Deploy</text>
+    </g>
+
+    <!-- AWS -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="140" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="140" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="140" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="200" y="40">&#x2601;</text>
+      <text class="tech-name" x="200" y="62">AWS</text>
+      <text class="tech-label" x="200" y="74">Cloud</text>
+    </g>
+
+    <!-- Cloudflare -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="280" y="0" width="120" height="80"/>
+      <rect class="card-border" x="280" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="280" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="340" y="40">&#x1F6E1;</text>
+      <text class="tech-name" x="340" y="62">Cloudflare</text>
+      <text class="tech-label" x="340" y="74">CDN/WAF</text>
+    </g>
+
+    <!-- Git/GitHub -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="420" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="420" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="420" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="480" y="40">&#x1F4BB;</text>
+      <text class="tech-name" x="480" y="62">Git / GitHub</text>
+      <text class="tech-label" x="480" y="74">Version Ctrl</text>
+    </g>
+
+    <!-- Razorpay -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="560" y="0" width="120" height="80"/>
+      <rect class="card-border" x="560" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="560" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="620" y="40">&#x1F4B3;</text>
+      <text class="tech-name" x="620" y="62">Razorpay</text>
+      <text class="tech-label" x="620" y="74">Payments</text>
+    </g>
+
+    <!-- Gemini API -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="700" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="700" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="700" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="760" y="40">&#x2728;</text>
+      <text class="tech-name" x="760" y="62">Gemini API</text>
+      <text class="tech-label" x="760" y="74">AI</text>
+    </g>
+  </g>
+
+  <!-- ==========================================
+       CATEGORY 5: INTEGRATIONS & SERVICES
+       ========================================== -->
+  <g transform="translate(30, 660)">
+    <text class="category-label" x="0" y="14">&#x276F; Integrations &amp; Services</text>
+    <line class="category-line" x1="190" y1="10" x2="790" y2="10"/>
+  </g>
+
+  <g class="float-group-1" transform="translate(30, 690)">
+    <!-- EmailJS -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="0" y="0" width="120" height="80"/>
+      <rect class="card-border" x="0" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="0" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="60" y="40">&#x2709;</text>
+      <text class="tech-name" x="60" y="62">EmailJS</text>
+      <text class="tech-label" x="60" y="74">Email</text>
+    </g>
+
+    <!-- Resend -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="140" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="140" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="140" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="200" y="40">&#x1F4E8;</text>
+      <text class="tech-name" x="200" y="62">Resend</text>
+      <text class="tech-label" x="200" y="74">Transactional</text>
+    </g>
+
+    <!-- Google Analytics -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="280" y="0" width="120" height="80"/>
+      <rect class="card-border" x="280" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="280" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="340" y="40">&#x1F4CA;</text>
+      <text class="tech-name" x="340" y="62">Analytics</text>
+      <text class="tech-label" x="340" y="74">Google</text>
+    </g>
+
+    <!-- Clarity -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="420" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="420" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="420" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="480" y="40">&#x1F50D;</text>
+      <text class="tech-name" x="480" y="62">MS Clarity</text>
+      <text class="tech-label" x="480" y="74">Heatmaps</text>
+    </g>
+
+    <!-- Payload CMS -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="560" y="0" width="120" height="80"/>
+      <rect class="card-border" x="560" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="560" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="620" y="40">&#x1F4DD;</text>
+      <text class="tech-name" x="620" y="62">Payload CMS</text>
+      <text class="tech-label" x="620" y="74">Headless</text>
+    </g>
+
+    <!-- Cloudflare R2 -->
+    <g filter="url(#ts-shadow)">
+      <rect class="card-bg" x="700" y="0" width="120" height="80"/>
+      <rect class="card-border-alt" x="700" y="0" width="120" height="80"/>
+      <rect class="card-shimmer" x="700" y="0" width="120" height="80"/>
+      <text class="tech-icon" x="760" y="40">&#x1F5C4;</text>
+      <text class="tech-name" x="760" y="62">CF R2</text>
+      <text class="tech-label" x="760" y="74">Storage</text>
+    </g>
+  </g>
+
+  <!-- Bottom status bar -->
+  <g transform="translate(30, 810)">
+    <line class="neon-sep" x1="0" y1="0" x2="790" y2="0"/>
+    <text class="section-subtitle" x="0" y="24">// 30+ technologies mastered</text>
+    <text class="section-subtitle" x="300" y="24">// Production-tested stack</text>
+    <text class="section-subtitle" x="580" y="24">// Always learning</text>
+  </g>
+
+  <!-- Decorative dots -->
+  <circle class="dot-accent" cx="30" cy="870" r="2"/>
+  <circle class="dot-accent" cx="38" cy="870" r="2"/>
+  <circle class="dot-accent" cx="46" cy="870" r="2"/>
+  <circle class="dot-accent" cx="804" cy="870" r="2"/>
+  <circle class="dot-accent" cx="812" cy="870" r="2"/>
+  <circle class="dot-accent" cx="820" cy="870" r="2"/>
+
+  <!-- Bottom neon line -->
+  <line x1="30" y1="900" x2="820" y2="900" stroke="#00ff88" stroke-width="1" opacity="0.15" filter="url(#ts-glow)"/>
+</svg>

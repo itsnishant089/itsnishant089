@@ -1,0 +1,441 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 900" role="img" aria-label="Nishant's Achievements Timeline">
+  <title>Achievements — Hackathons, Awards, Milestones</title>
+  <defs>
+    <style>
+      /* ============================================
+         ACHIEVEMENTS.SVG — Timeline & Awards
+         Theme: Dark Hacker + Cyberpunk + Glassmorphism
+         Author: Nishant (itsnishant089)
+         ============================================ */
+
+      @keyframes timeline-pulse {
+        0%, 100% { stroke-opacity: 0.3; }
+        50% { stroke-opacity: 0.8; }
+      }
+      @keyframes node-glow {
+        0%, 100% { r: 8; fill-opacity: 0.8; }
+        50% { r: 10; fill-opacity: 1; }
+      }
+      @keyframes card-enter-1 {
+        0%, 8% { opacity: 0; transform: translateX(-30px); }
+        12%, 100% { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes card-enter-2 {
+        0%, 20% { opacity: 0; transform: translateX(30px); }
+        25%, 100% { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes card-enter-3 {
+        0%, 35% { opacity: 0; transform: translateX(-30px); }
+        40%, 100% { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes card-enter-4 {
+        0%, 48% { opacity: 0; transform: translateX(30px); }
+        53%, 100% { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes card-enter-5 {
+        0%, 60% { opacity: 0; transform: translateX(-30px); }
+        65%, 100% { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes card-enter-6 {
+        0%, 72% { opacity: 0; transform: translateX(30px); }
+        77%, 100% { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes card-enter-7 {
+        0%, 84% { opacity: 0; transform: translateX(-30px); }
+        89%, 100% { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes badge-shine {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      @keyframes border-flow {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -30; }
+      }
+      @keyframes title-shift {
+        0%, 100% { fill: #00ff88; }
+        50% { fill: #00c6ff; }
+      }
+      @keyframes connector-draw {
+        from { stroke-dashoffset: 800; }
+        to { stroke-dashoffset: 0; }
+      }
+
+      /* Base */
+      .bg { fill: #0d1117; }
+      .header-title {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 20px;
+        font-weight: bold;
+        fill: #00ff88;
+        text-anchor: middle;
+        animation: title-shift 5s ease-in-out infinite;
+      }
+      .header-sub {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #6b7280;
+        text-anchor: middle;
+      }
+
+      /* Timeline line */
+      .timeline-line {
+        stroke: #00ff88;
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 8 4;
+        animation: timeline-pulse 3s ease-in-out infinite;
+      }
+      .timeline-line-solid {
+        stroke: #00ff88;
+        stroke-width: 2;
+        fill: none;
+        opacity: 0.2;
+        stroke-dasharray: 800;
+        animation: connector-draw 4s ease-out forwards;
+      }
+      .timeline-node {
+        fill: #00ff88;
+        stroke: #0d1117;
+        stroke-width: 3;
+        animation: node-glow 2s ease-in-out infinite;
+      }
+      .timeline-node-gold {
+        fill: #ffd700;
+        stroke: #0d1117;
+        stroke-width: 3;
+        animation: node-glow 2s ease-in-out infinite;
+      }
+      .timeline-node-silver {
+        fill: #c0c0c0;
+        stroke: #0d1117;
+        stroke-width: 3;
+        animation: node-glow 2s ease-in-out infinite;
+      }
+
+      /* Card styles */
+      .achievement-card {
+        fill: #111827;
+        rx: 12;
+        ry: 12;
+        opacity: 0.9;
+      }
+      .card-border-gold {
+        fill: none;
+        stroke: #ffd700;
+        stroke-width: 1.2;
+        rx: 12;
+        ry: 12;
+        stroke-dasharray: 6 4;
+        animation: border-flow 4s linear infinite;
+      }
+      .card-border-silver {
+        fill: none;
+        stroke: #c0c0c0;
+        stroke-width: 1.2;
+        rx: 12;
+        ry: 12;
+        stroke-dasharray: 6 4;
+        animation: border-flow 5s linear infinite;
+      }
+      .card-border-green {
+        fill: none;
+        stroke: #00ff88;
+        stroke-width: 1;
+        rx: 12;
+        ry: 12;
+        stroke-dasharray: 6 4;
+        animation: border-flow 4.5s linear infinite;
+      }
+      .card-border-cyan {
+        fill: none;
+        stroke: #00c6ff;
+        stroke-width: 1;
+        rx: 12;
+        ry: 12;
+        stroke-dasharray: 6 4;
+        animation: border-flow 5.5s linear infinite;
+      }
+
+      /* Text styles */
+      .award-title {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 14px;
+        font-weight: bold;
+        fill: #e2e8f0;
+      }
+      .award-event {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #00c6ff;
+      }
+      .award-desc {
+        font-family: 'Courier New', monospace;
+        font-size: 10.5px;
+        fill: #9ca3af;
+      }
+      .award-date {
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        fill: #6b7280;
+      }
+      .badge-text {
+        font-family: 'SF Mono', 'Courier New', monospace;
+        font-size: 11px;
+        font-weight: bold;
+        text-anchor: middle;
+        animation: badge-shine 3s ease-in-out infinite;
+      }
+      .badge-gold { fill: #ffd700; }
+      .badge-silver { fill: #c0c0c0; }
+      .milestone-title {
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+        font-weight: bold;
+        fill: #00ff88;
+      }
+      .milestone-value {
+        font-family: 'SF Mono', 'Courier New', monospace;
+        font-size: 22px;
+        font-weight: bold;
+        fill: #00ff88;
+        text-anchor: middle;
+      }
+      .milestone-label {
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        fill: #6b7280;
+        text-anchor: middle;
+      }
+
+      /* Entry animations */
+      .entry-1 { opacity: 0; animation: card-enter-1 12s ease-out forwards; }
+      .entry-2 { opacity: 0; animation: card-enter-2 12s ease-out forwards; }
+      .entry-3 { opacity: 0; animation: card-enter-3 12s ease-out forwards; }
+      .entry-4 { opacity: 0; animation: card-enter-4 12s ease-out forwards; }
+      .entry-5 { opacity: 0; animation: card-enter-5 12s ease-out forwards; }
+      .entry-6 { opacity: 0; animation: card-enter-6 12s ease-out forwards; }
+      .entry-7 { opacity: 0; animation: card-enter-7 12s ease-out forwards; }
+
+      /* Decorative */
+      .corner-mark {
+        stroke: #00ff88;
+        stroke-width: 1.5;
+        fill: none;
+        opacity: 0.3;
+      }
+      .sep-line {
+        stroke: #00ff88;
+        stroke-width: 1;
+        opacity: 0.1;
+      }
+    </style>
+
+    <!-- Filters -->
+    <filter id="ach-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="ach-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="gold-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="850" height="900"/>
+
+  <!-- Corner marks -->
+  <polyline class="corner-mark" points="15,35 15,15 35,15"/>
+  <polyline class="corner-mark" points="815,15 835,15 835,35"/>
+  <polyline class="corner-mark" points="835,865 835,885 815,885"/>
+  <polyline class="corner-mark" points="35,885 15,885 15,865"/>
+
+  <!-- Header -->
+  <g transform="translate(425, 50)">
+    <text class="header-title" y="0" filter="url(#ach-glow)">// ACHIEVEMENTS</text>
+    <text class="header-sub" y="24">Hackathon wins, awards, and key milestones</text>
+  </g>
+
+  <line class="sep-line" x1="100" y1="82" x2="750" y2="82"/>
+
+  <!-- ==========================================
+       TIMELINE
+       ========================================== -->
+
+  <!-- Central timeline line -->
+  <line class="timeline-line-solid" x1="425" y1="100" x2="425" y2="770"/>
+  <line class="timeline-line" x1="425" y1="100" x2="425" y2="770"/>
+
+  <!-- ===== ACHIEVEMENT 1: Orbix Hackathon — 1st Place ===== -->
+  <g class="entry-1">
+    <!-- Timeline node -->
+    <circle class="timeline-node-gold" cx="425" cy="145" r="8" filter="url(#gold-glow)"/>
+    <text class="award-date" x="425" y="125" text-anchor="middle">2024</text>
+
+    <!-- Card (left side) -->
+    <g filter="url(#ach-shadow)">
+      <rect class="achievement-card" x="50" y="115" width="340" height="95"/>
+      <rect class="card-border-gold" x="50" y="115" width="340" height="95"/>
+    </g>
+    <!-- Connector line -->
+    <line x1="390" y1="145" x2="417" y2="145" stroke="#ffd700" stroke-width="1" opacity="0.5"/>
+
+    <text class="award-title" x="70" y="140">1st Place — Orbix Hackathon</text>
+    <text class="award-event" x="70" y="157">IIIT Delhi</text>
+    <text class="award-desc" x="70" y="175">Built an innovative tech solution under</text>
+    <text class="award-desc" x="70" y="188">competitive conditions, beating top institutions.</text>
+
+    <!-- Badge -->
+    <g filter="url(#gold-glow)">
+      <circle cx="365" cy="145" r="14" fill="#ffd700" opacity="0.15"/>
+      <text class="badge-text badge-gold" x="365" y="149">1st</text>
+    </g>
+  </g>
+
+  <!-- ===== ACHIEVEMENT 2: Evolothon 1.0 — 2nd Place ===== -->
+  <g class="entry-2">
+    <circle class="timeline-node-silver" cx="425" cy="275" r="8" filter="url(#ach-glow)"/>
+    <text class="award-date" x="425" y="255" text-anchor="middle">2024</text>
+
+    <!-- Card (right side) -->
+    <g filter="url(#ach-shadow)">
+      <rect class="achievement-card" x="460" y="245" width="340" height="95"/>
+      <rect class="card-border-silver" x="460" y="245" width="340" height="95"/>
+    </g>
+    <line x1="433" y1="275" x2="460" y2="275" stroke="#c0c0c0" stroke-width="1" opacity="0.5"/>
+
+    <text class="award-title" x="480" y="270">2nd Place — Evolothon 1.0</text>
+    <text class="award-event" x="480" y="287">Evolotek</text>
+    <text class="award-desc" x="480" y="305">Built and pitched an impactful product</text>
+    <text class="award-desc" x="480" y="318">among talented innovators.</text>
+
+    <g filter="url(#ach-glow)">
+      <circle cx="775" cy="275" r="14" fill="#c0c0c0" opacity="0.15"/>
+      <text class="badge-text badge-silver" x="775" y="279">2nd</text>
+    </g>
+  </g>
+
+  <!-- ===== ACHIEVEMENT 3: HACKRUST — 2nd Place ===== -->
+  <g class="entry-3">
+    <circle class="timeline-node-silver" cx="425" cy="405" r="8" filter="url(#ach-glow)"/>
+    <text class="award-date" x="425" y="385" text-anchor="middle">2024</text>
+
+    <!-- Card (left side) -->
+    <g filter="url(#ach-shadow)">
+      <rect class="achievement-card" x="50" y="375" width="340" height="95"/>
+      <rect class="card-border-silver" x="50" y="375" width="340" height="95"/>
+    </g>
+    <line x1="390" y1="405" x2="417" y2="405" stroke="#c0c0c0" stroke-width="1" opacity="0.5"/>
+
+    <text class="award-title" x="70" y="400">2nd Place — HACKRUST</text>
+    <text class="award-event" x="70" y="417">DCRUST Murthal</text>
+    <text class="award-desc" x="70" y="435">EdgePay: offline-first UPI payment app</text>
+    <text class="award-desc" x="70" y="448">for rural India using USSD/GSM infra.</text>
+
+    <g filter="url(#ach-glow)">
+      <circle cx="365" cy="405" r="14" fill="#c0c0c0" opacity="0.15"/>
+      <text class="badge-text badge-silver" x="365" y="409">2nd</text>
+    </g>
+  </g>
+
+  <!-- ===== ACHIEVEMENT 4: Technophilia 7.0 — 2nd Place ===== -->
+  <g class="entry-4">
+    <circle class="timeline-node-silver" cx="425" cy="535" r="8" filter="url(#ach-glow)"/>
+    <text class="award-date" x="425" y="515" text-anchor="middle">2024</text>
+
+    <!-- Card (right side) -->
+    <g filter="url(#ach-shadow)">
+      <rect class="achievement-card" x="460" y="505" width="340" height="95"/>
+      <rect class="card-border-silver" x="460" y="505" width="340" height="95"/>
+    </g>
+    <line x1="433" y1="535" x2="460" y2="535" stroke="#c0c0c0" stroke-width="1" opacity="0.5"/>
+
+    <text class="award-title" x="480" y="530">2nd Place — Technophilia 7.0</text>
+    <text class="award-event" x="480" y="547">College of Vocational Studies, DU</text>
+    <text class="award-desc" x="480" y="565">Strong competitive project presentation</text>
+    <text class="award-desc" x="480" y="578">at University of Delhi event.</text>
+
+    <g filter="url(#ach-glow)">
+      <circle cx="775" cy="535" r="14" fill="#c0c0c0" opacity="0.15"/>
+      <text class="badge-text badge-silver" x="775" y="539">2nd</text>
+    </g>
+  </g>
+
+  <!-- ===== MILESTONE: Key Numbers ===== -->
+  <g class="entry-5">
+    <circle class="timeline-node" cx="425" cy="660" r="8" filter="url(#ach-glow)"/>
+    <text class="award-date" x="425" y="640" text-anchor="middle">2023-2025</text>
+
+    <!-- Card (left) -->
+    <g filter="url(#ach-shadow)">
+      <rect class="achievement-card" x="50" y="630" width="340" height="95"/>
+      <rect class="card-border-green" x="50" y="630" width="340" height="95"/>
+    </g>
+    <line x1="390" y1="660" x2="417" y2="660" stroke="#00ff88" stroke-width="1" opacity="0.5"/>
+
+    <text class="milestone-title" x="70" y="655">Key Milestones</text>
+    <text class="award-desc" x="70" y="675">26.5K+ Google Search clicks on hsbteleet.com</text>
+    <text class="award-desc" x="70" y="690">316K+ impressions across platforms</text>
+    <text class="award-desc" x="70" y="705">250+ content pages shipped to production</text>
+  </g>
+
+  <!-- ===== NSS & Leadership ===== -->
+  <g class="entry-6">
+    <!-- Card (right) -->
+    <g filter="url(#ach-shadow)">
+      <rect class="achievement-card" x="460" y="630" width="340" height="95"/>
+      <rect class="card-border-cyan" x="460" y="630" width="340" height="95"/>
+    </g>
+
+    <text class="milestone-title" x="480" y="655" fill="#00c6ff">Leadership &amp; Service</text>
+    <text class="award-desc" x="480" y="675">NSS Volunteer &amp; Leader (2023-2025)</text>
+    <text class="award-desc" x="480" y="690">Managed 100+ volunteers across camps</text>
+    <text class="award-desc" x="480" y="705">5+ NSS camps organized &amp; coordinated</text>
+  </g>
+
+  <!-- ==========================================
+       SUMMARY STATS BAR
+       ========================================== -->
+  <g class="entry-7" transform="translate(0, 770)">
+    <line class="sep-line" x1="50" y1="0" x2="800" y2="0"/>
+
+    <!-- Stat boxes -->
+    <g transform="translate(130, 40)">
+      <rect fill="#111827" x="-55" y="-30" width="110" height="65" rx="8" opacity="0.8"/>
+      <rect fill="none" stroke="#ffd700" stroke-width="0.8" x="-55" y="-30" width="110" height="65" rx="8" opacity="0.3"/>
+      <text class="milestone-value" x="0" y="-2" fill="#ffd700">4x</text>
+      <text class="milestone-label" x="0" y="18">Hackathon Wins</text>
+    </g>
+
+    <g transform="translate(310, 40)">
+      <rect fill="#111827" x="-55" y="-30" width="110" height="65" rx="8" opacity="0.8"/>
+      <rect fill="none" stroke="#c0c0c0" stroke-width="0.8" x="-55" y="-30" width="110" height="65" rx="8" opacity="0.3"/>
+      <text class="milestone-value" x="0" y="-2" fill="#c0c0c0">3x</text>
+      <text class="milestone-label" x="0" y="18">Finalist</text>
+    </g>
+
+    <g transform="translate(490, 40)">
+      <rect fill="#111827" x="-55" y="-30" width="110" height="65" rx="8" opacity="0.8"/>
+      <rect fill="none" stroke="#00ff88" stroke-width="0.8" x="-55" y="-30" width="110" height="65" rx="8" opacity="0.3"/>
+      <text class="milestone-value" x="0" y="-2">26.5K+</text>
+      <text class="milestone-label" x="0" y="18">Search Clicks</text>
+    </g>
+
+    <g transform="translate(670, 40)">
+      <rect fill="#111827" x="-55" y="-30" width="110" height="65" rx="8" opacity="0.8"/>
+      <rect fill="none" stroke="#00c6ff" stroke-width="0.8" x="-55" y="-30" width="110" height="65" rx="8" opacity="0.3"/>
+      <text class="milestone-value" x="0" y="-2" fill="#00c6ff">250+</text>
+      <text class="milestone-label" x="0" y="18">Pages Shipped</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,273 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" role="img" aria-label="Nishant's ASCII Terminal Avatar">
+  <title>Nishant — Terminal Avatar</title>
+  <defs>
+    <style>
+      /* ============================================
+         AVATAR.SVG — ASCII Terminal Portrait
+         Theme: Dark Hacker + Cyberpunk
+         Author: Nishant (itsnishant089)
+         No raster images. Pure SVG + CSS animation.
+         ============================================ */
+
+      @keyframes cursor-blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes scanline-move {
+        0% { transform: translateY(-500px); }
+        100% { transform: translateY(500px); }
+      }
+
+      @keyframes glow-pulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+
+      @keyframes text-flicker {
+        0%, 100% { opacity: 1; }
+        92% { opacity: 1; }
+        93% { opacity: 0.7; }
+        94% { opacity: 1; }
+        96% { opacity: 0.8; }
+        97% { opacity: 1; }
+      }
+
+      @keyframes border-glow {
+        0%, 100% { stroke-opacity: 0.4; }
+        50% { stroke-opacity: 0.8; }
+      }
+
+      @keyframes fade-in-line {
+        from { opacity: 0; transform: translateX(-10px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      /* Base styles */
+      .terminal-bg {
+        fill: #0d1117;
+      }
+      .terminal-frame {
+        fill: none;
+        stroke: #00ff88;
+        stroke-width: 1.5;
+        animation: border-glow 3s ease-in-out infinite;
+      }
+      .titlebar {
+        fill: #111827;
+      }
+      .titlebar-border {
+        stroke: #1e293b;
+        stroke-width: 1;
+        fill: none;
+      }
+      .btn-close { fill: #ff5f56; }
+      .btn-min { fill: #ffbd2e; }
+      .btn-max { fill: #27c93f; }
+      .titlebar-text {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 11px;
+        fill: #6b7280;
+        text-anchor: middle;
+      }
+
+      /* ASCII art styles */
+      .ascii-art {
+        font-family: 'Courier New', 'Liberation Mono', monospace;
+        font-size: 9px;
+        fill: #00ff88;
+        animation: text-flicker 8s ease-in-out infinite;
+      }
+      .ascii-art-dim {
+        font-family: 'Courier New', 'Liberation Mono', monospace;
+        font-size: 9px;
+        fill: #00ff88;
+        opacity: 0.5;
+      }
+      .ascii-art-bright {
+        font-family: 'Courier New', 'Liberation Mono', monospace;
+        font-size: 9px;
+        fill: #00ff88;
+        animation: glow-pulse 2s ease-in-out infinite;
+      }
+
+      /* Terminal text */
+      .term-prompt {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #00c6ff;
+      }
+      .term-command {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #e2e8f0;
+      }
+      .term-output {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #00ff88;
+      }
+      .term-label {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #6b7280;
+      }
+      .term-value {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #e2e8f0;
+      }
+      .term-highlight {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #00c6ff;
+      }
+
+      /* Cursor */
+      .cursor {
+        fill: #00ff88;
+        animation: cursor-blink 1s step-end infinite;
+      }
+
+      /* Scanline */
+      .scanline {
+        fill: rgba(0, 255, 136, 0.03);
+        animation: scanline-move 6s linear infinite;
+      }
+
+      /* Neon underglow */
+      .neon-line {
+        stroke: #00ff88;
+        stroke-width: 2;
+        animation: glow-pulse 3s ease-in-out infinite;
+      }
+
+      /* Info section */
+      .info-line {
+        animation: fade-in-line 0.5s ease-out forwards;
+      }
+      .info-line:nth-child(1) { animation-delay: 0.2s; }
+      .info-line:nth-child(2) { animation-delay: 0.4s; }
+      .info-line:nth-child(3) { animation-delay: 0.6s; }
+      .info-line:nth-child(4) { animation-delay: 0.8s; }
+      .info-line:nth-child(5) { animation-delay: 1.0s; }
+      .info-line:nth-child(6) { animation-delay: 1.2s; }
+    </style>
+
+    <!-- Glow filter for neon effects -->
+    <filter id="avatar-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Drop shadow for terminal window -->
+    <filter id="terminal-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- CRT scanline pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="transparent"/>
+      <rect y="2" width="4" height="2" fill="rgba(0,0,0,0.08)"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect class="terminal-bg" width="600" height="500" rx="0"/>
+
+  <!-- Terminal window with shadow -->
+  <g filter="url(#terminal-shadow)">
+    <!-- Terminal body -->
+    <rect class="terminal-bg" x="20" y="20" width="560" height="460" rx="10"/>
+    <rect class="terminal-frame" x="20" y="20" width="560" height="460" rx="10"/>
+
+    <!-- Title bar -->
+    <rect class="titlebar" x="20" y="20" width="560" height="36" rx="10"/>
+    <rect class="titlebar" x="20" y="46" width="560" height="10"/>
+    <rect class="titlebar-border" x="20" y="55" width="560" height="1"/>
+
+    <!-- Traffic light buttons -->
+    <circle class="btn-close" cx="42" cy="38" r="6"/>
+    <circle class="btn-min" cx="62" cy="38" r="6"/>
+    <circle class="btn-max" cx="82" cy="38" r="6"/>
+
+    <!-- Title text -->
+    <text class="titlebar-text" x="300" y="42">nishant@dev ~ /home/nishant</text>
+  </g>
+
+  <!-- Scanline overlay -->
+  <rect class="scanline" x="20" y="56" width="560" height="4" rx="0"/>
+  <rect x="20" y="56" width="560" height="424" rx="0" fill="url(#scanlines)" opacity="0.5"/>
+
+  <!-- ASCII Art Portrait Section -->
+  <g transform="translate(40, 75)">
+    <!-- Command prompt -->
+    <text class="term-prompt" x="0" y="0">nishant@dev</text>
+    <text class="term-label" x="84" y="0">:</text>
+    <text class="term-highlight" x="90" y="0">~</text>
+    <text class="term-label" x="98" y="0">$</text>
+    <text class="term-command" x="108" y="0">cat avatar.ascii</text>
+
+    <!-- ASCII Art - Hacker/Developer themed portrait -->
+    <text class="ascii-art" x="0" y="24">  ╔══════════════════════════════════════════════╗</text>
+    <text class="ascii-art" x="0" y="35">  ║                                              ║</text>
+    <text class="ascii-art-dim" x="0" y="46">  ║      ██████████████████████████████           ║</text>
+    <text class="ascii-art-dim" x="0" y="57">  ║    ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░██         ║</text>
+    <text class="ascii-art-dim" x="0" y="68">  ║   ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██        ║</text>
+    <text class="ascii-art-dim" x="0" y="79">  ║   ██░░░░████░░░░░░░░░░░░████░░░░░░██        ║</text>
+    <text class="ascii-art-dim" x="0" y="90">  ║   ██░░░░████░░░░░░░░░░░░████░░░░░░██        ║</text>
+    <text class="ascii-art" x="0" y="101">  ║   ██░░░░░░░░░░░░░██░░░░░░░░░░░░░░░██        ║</text>
+    <text class="ascii-art" x="0" y="112">  ║   ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██        ║</text>
+    <text class="ascii-art" x="0" y="123">  ║    ██░░░░░██████████████░░░░░░░░░██         ║</text>
+    <text class="ascii-art-dim" x="0" y="134">  ║      ██░░░░░░░░░░░░░░░░░░░░░░██           ║</text>
+    <text class="ascii-art-dim" x="0" y="145">  ║        ████████████████████████             ║</text>
+    <text class="ascii-art" x="0" y="156">  ║                                              ║</text>
+    <text class="ascii-art-bright" x="0" y="167">  ║         N I S H A N T                       ║</text>
+    <text class="ascii-art" x="0" y="178">  ║         Full-Stack Developer                 ║</text>
+    <text class="ascii-art" x="0" y="189">  ║         4x Hackathon Winner                  ║</text>
+    <text class="ascii-art" x="0" y="200">  ║                                              ║</text>
+    <text class="ascii-art" x="0" y="211">  ╚══════════════════════════════════════════════╝</text>
+  </g>
+
+  <!-- Info section below portrait -->
+  <g transform="translate(40, 310)">
+    <g class="info-line">
+      <text class="term-prompt" x="0" y="0">nishant@dev</text>
+      <text class="term-label" x="84" y="0">:</text>
+      <text class="term-highlight" x="90" y="0">~</text>
+      <text class="term-label" x="98" y="0">$</text>
+      <text class="term-command" x="108" y="0">whoami</text>
+    </g>
+    <g class="info-line">
+      <text class="term-output" x="0" y="18">Nishant — B.Tech CSE @ DCRUST Murthal</text>
+    </g>
+    <g class="info-line">
+      <text class="term-output" x="0" y="36">Full-Stack Developer | Builder | Open Source</text>
+    </g>
+    <g class="info-line">
+      <text class="term-label" x="0" y="58">Location:</text>
+      <text class="term-value" x="75" y="58">Hisar, Haryana, India</text>
+    </g>
+    <g class="info-line">
+      <text class="term-label" x="0" y="74">Web:</text>
+      <text class="term-highlight" x="75" y="74">itsnishant.com</text>
+    </g>
+    <g class="info-line">
+      <text class="term-label" x="0" y="90">Status:</text>
+      <text class="term-output" x="75" y="90">Building things that matter</text>
+    </g>
+
+    <!-- Blinking cursor at the end -->
+    <text class="term-prompt" x="0" y="114">nishant@dev</text>
+    <text class="term-label" x="84" y="114">:</text>
+    <text class="term-highlight" x="90" y="114">~</text>
+    <text class="term-label" x="98" y="114">$</text>
+    <rect class="cursor" x="108" y="104" width="8" height="14"/>
+  </g>
+
+  <!-- Neon accent line at bottom -->
+  <line class="neon-line" x1="40" y1="455" x2="560" y2="455" filter="url(#avatar-glow)"/>
+</svg>

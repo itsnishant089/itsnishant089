@@ -1,0 +1,1043 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1800" role="img" aria-label="Nishant's GitHub Profile - Full Stack Developer and 4x Hackathon Winner">
+  <title>Nishant — Full-Stack Developer | 4x Hackathon Winner | Builder</title>
+  <desc>
+    Animated GitHub profile hero banner for Nishant (itsnishant089).
+    B.Tech CSE at DCRUST Murthal. Diploma from GPMA (80.85%).
+    Built hsbteleet.com (26.5K+ clicks) and btechleet.com.
+    Theme: Dark Hacker, Matrix, Cyberpunk, Glassmorphism.
+  </desc>
+
+  <defs>
+    <style>
+      /* ================================================================
+         PROFILE.SVG — The Main Hero Banner
+         Theme: Dark Hacker + Matrix + Cyberpunk + Modern Glassmorphism
+         Author: Nishant (itsnishant089)
+         Colors: #00ff88, #00c6ff, #0f172a, #111827, #0d1117
+         ================================================================ */
+
+      /* ---- KEYFRAME ANIMATIONS ---- */
+
+      @keyframes cursor-blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes matrix-fall-1 {
+        0% { transform: translateY(-200px); opacity: 0; }
+        10% { opacity: 0.4; }
+        90% { opacity: 0.4; }
+        100% { transform: translateY(1800px); opacity: 0; }
+      }
+      @keyframes matrix-fall-2 {
+        0% { transform: translateY(-200px); opacity: 0; }
+        10% { opacity: 0.3; }
+        90% { opacity: 0.3; }
+        100% { transform: translateY(1800px); opacity: 0; }
+      }
+      @keyframes matrix-fall-3 {
+        0% { transform: translateY(-200px); opacity: 0; }
+        10% { opacity: 0.2; }
+        90% { opacity: 0.2; }
+        100% { transform: translateY(1800px); opacity: 0; }
+      }
+
+      @keyframes glow-pulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+      @keyframes glow-shift {
+        0%, 100% { fill: #00ff88; }
+        50% { fill: #00c6ff; }
+      }
+      @keyframes border-glow {
+        0%, 100% { stroke-opacity: 0.3; }
+        50% { stroke-opacity: 0.7; }
+      }
+      @keyframes border-shimmer {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -40; }
+      }
+
+      @keyframes float-up {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+      @keyframes float-down {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(4px); }
+      }
+
+      @keyframes scanline-sweep {
+        0% { transform: translateY(-1800px); }
+        100% { transform: translateY(1800px); }
+      }
+
+      @keyframes text-flicker {
+        0%, 100% { opacity: 1; }
+        92% { opacity: 1; }
+        93% { opacity: 0.6; }
+        94% { opacity: 1; }
+        96% { opacity: 0.7; }
+        97% { opacity: 1; }
+      }
+
+      @keyframes fade-in-1 { 0%, 3% { opacity: 0; } 5%, 100% { opacity: 1; } }
+      @keyframes fade-in-2 { 0%, 6% { opacity: 0; } 8%, 100% { opacity: 1; } }
+      @keyframes fade-in-3 { 0%, 9% { opacity: 0; } 11%, 100% { opacity: 1; } }
+      @keyframes fade-in-4 { 0%, 12% { opacity: 0; } 14%, 100% { opacity: 1; } }
+      @keyframes fade-in-5 { 0%, 15% { opacity: 0; } 17%, 100% { opacity: 1; } }
+      @keyframes fade-in-6 { 0%, 18% { opacity: 0; } 20%, 100% { opacity: 1; } }
+
+      @keyframes card-glow-green {
+        0%, 100% { stroke: #00ff88; stroke-opacity: 0.2; }
+        50% { stroke: #00ff88; stroke-opacity: 0.5; }
+      }
+      @keyframes card-glow-cyan {
+        0%, 100% { stroke: #00c6ff; stroke-opacity: 0.2; }
+        50% { stroke: #00c6ff; stroke-opacity: 0.5; }
+      }
+
+      @keyframes node-pulse {
+        0%, 100% { r: 5; }
+        50% { r: 7; }
+      }
+
+      @keyframes progress-fill {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+
+      @keyframes typing-cursor {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      /* ---- BASE STYLES ---- */
+
+      .bg { fill: #0d1117; }
+      .bg-dark { fill: #111827; }
+      .bg-darker { fill: #0f172a; }
+
+      /* Matrix rain text */
+      .matrix-char {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #00ff88;
+      }
+      .mf1 { animation: matrix-fall-1 8s linear infinite; }
+      .mf2 { animation: matrix-fall-2 10s linear infinite; }
+      .mf3 { animation: matrix-fall-3 12s linear infinite; }
+      .mf1d { animation: matrix-fall-1 8s linear infinite; animation-delay: 2s; }
+      .mf2d { animation: matrix-fall-2 10s linear infinite; animation-delay: 3s; }
+      .mf3d { animation: matrix-fall-3 12s linear infinite; animation-delay: 4s; }
+      .mf1e { animation: matrix-fall-1 8s linear infinite; animation-delay: 5s; }
+      .mf2e { animation: matrix-fall-2 10s linear infinite; animation-delay: 1s; }
+      .mf3e { animation: matrix-fall-3 12s linear infinite; animation-delay: 6s; }
+
+      /* Terminal chrome */
+      .term-frame {
+        fill: none;
+        stroke: #00ff88;
+        stroke-width: 1.5;
+        animation: border-glow 4s ease-in-out infinite;
+      }
+      .term-titlebar { fill: #111827; }
+      .term-titlebar-line { stroke: #1e293b; stroke-width: 1; }
+      .btn-r { fill: #ff5f56; }
+      .btn-y { fill: #ffbd2e; }
+      .btn-g { fill: #27c93f; }
+      .titlebar-txt {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 11px;
+        fill: #6b7280;
+        text-anchor: middle;
+      }
+
+      /* Typography */
+      .ascii-large {
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        fill: #00ff88;
+        animation: text-flicker 10s ease-in-out infinite;
+      }
+      .ascii-glow {
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        fill: #00ff88;
+        animation: glow-pulse 3s ease-in-out infinite;
+      }
+
+      .heading-main {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 28px;
+        font-weight: bold;
+        fill: #00ff88;
+        animation: glow-shift 6s ease-in-out infinite;
+      }
+      .heading-sub {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 16px;
+        fill: #00c6ff;
+      }
+      .heading-accent {
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+        fill: #e2e8f0;
+      }
+
+      .prompt {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #00c6ff;
+      }
+      .cmd {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #e2e8f0;
+      }
+      .out-green {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #00ff88;
+      }
+      .out-cyan {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #00c6ff;
+      }
+      .out-white {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #e2e8f0;
+      }
+      .out-gray {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #6b7280;
+      }
+      .out-yellow {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #ffbd2e;
+      }
+
+      .section-header {
+        font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+        font-size: 18px;
+        font-weight: bold;
+        fill: #00ff88;
+        animation: glow-shift 5s ease-in-out infinite;
+      }
+      .section-sub {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #6b7280;
+      }
+
+      .card-title {
+        font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+        font-size: 14px;
+        font-weight: bold;
+        fill: #e2e8f0;
+      }
+      .card-desc {
+        font-family: 'Courier New', monospace;
+        font-size: 10.5px;
+        fill: #9ca3af;
+      }
+      .card-tag {
+        font-family: 'Courier New', monospace;
+        font-size: 9px;
+        fill: #00c6ff;
+      }
+      .card-stat {
+        font-family: 'SF Mono', 'Courier New', monospace;
+        font-size: 20px;
+        font-weight: bold;
+        fill: #00ff88;
+        text-anchor: middle;
+      }
+      .card-stat-label {
+        font-family: 'Courier New', monospace;
+        font-size: 9px;
+        fill: #6b7280;
+        text-anchor: middle;
+      }
+
+      .tech-icon-text {
+        font-family: 'Courier New', monospace;
+        font-size: 18px;
+        fill: #00ff88;
+        text-anchor: middle;
+      }
+      .tech-name-text {
+        font-family: 'Courier New', monospace;
+        font-size: 9px;
+        fill: #e2e8f0;
+        text-anchor: middle;
+      }
+
+      .timeline-text {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #e2e8f0;
+      }
+      .timeline-date {
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        fill: #00c6ff;
+      }
+      .timeline-detail {
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        fill: #9ca3af;
+      }
+
+      /* Card components */
+      .glass-card {
+        fill: #111827;
+        rx: 10;
+        ry: 10;
+        opacity: 0.9;
+      }
+      .glass-border-green {
+        fill: none;
+        stroke: #00ff88;
+        stroke-width: 1;
+        rx: 10;
+        ry: 10;
+        animation: card-glow-green 4s ease-in-out infinite;
+      }
+      .glass-border-cyan {
+        fill: none;
+        stroke: #00c6ff;
+        stroke-width: 1;
+        rx: 10;
+        ry: 10;
+        animation: card-glow-cyan 4s ease-in-out infinite;
+      }
+      .glass-shimmer {
+        fill: none;
+        stroke: #00ff88;
+        stroke-width: 0.5;
+        stroke-dasharray: 6 10;
+        rx: 10;
+        ry: 10;
+        opacity: 0.2;
+        animation: border-shimmer 3s linear infinite;
+      }
+
+      /* Floating groups */
+      .float-1 { animation: float-up 6s ease-in-out infinite; }
+      .float-2 { animation: float-down 7s ease-in-out infinite; }
+      .float-3 { animation: float-up 8s ease-in-out infinite; }
+
+      /* Fade-in groups */
+      .fi1 { opacity: 0; animation: fade-in-1 15s ease-out forwards; }
+      .fi2 { opacity: 0; animation: fade-in-2 15s ease-out forwards; }
+      .fi3 { opacity: 0; animation: fade-in-3 15s ease-out forwards; }
+      .fi4 { opacity: 0; animation: fade-in-4 15s ease-out forwards; }
+      .fi5 { opacity: 0; animation: fade-in-5 15s ease-out forwards; }
+      .fi6 { opacity: 0; animation: fade-in-6 15s ease-out forwards; }
+
+      /* Cursor */
+      .cursor {
+        fill: #00ff88;
+        animation: cursor-blink 1s step-end infinite;
+      }
+
+      /* Scanline */
+      .scanline-bar {
+        fill: rgba(0, 255, 136, 0.02);
+        animation: scanline-sweep 10s linear infinite;
+      }
+
+      /* Neon lines */
+      .neon-line-h {
+        stroke: #00ff88;
+        stroke-width: 1;
+        opacity: 0.15;
+      }
+      .neon-line-accent {
+        stroke: #00ff88;
+        stroke-width: 2;
+        opacity: 0.4;
+        animation: glow-pulse 3s ease-in-out infinite;
+      }
+
+      /* Timeline */
+      .tl-line {
+        stroke: #00ff88;
+        stroke-width: 2;
+        stroke-dasharray: 6 4;
+        opacity: 0.3;
+        animation: border-glow 3s ease-in-out infinite;
+      }
+      .tl-node {
+        fill: #00ff88;
+        stroke: #0d1117;
+        stroke-width: 3;
+        animation: node-pulse 2s ease-in-out infinite;
+      }
+      .tl-node-cyan {
+        fill: #00c6ff;
+        stroke: #0d1117;
+        stroke-width: 3;
+        animation: node-pulse 2.5s ease-in-out infinite;
+      }
+
+      /* Corner decorations */
+      .corner-deco {
+        stroke: #00ff88;
+        stroke-width: 1.5;
+        fill: none;
+        opacity: 0.3;
+      }
+      .dot-deco {
+        fill: #00ff88;
+        opacity: 0.2;
+      }
+
+      /* Progress bars */
+      .progress-bg {
+        fill: #1e293b;
+        rx: 3;
+        ry: 3;
+      }
+      .progress-fill-green {
+        fill: #00ff88;
+        rx: 3;
+        ry: 3;
+        opacity: 0.8;
+      }
+      .progress-fill-cyan {
+        fill: #00c6ff;
+        rx: 3;
+        ry: 3;
+        opacity: 0.8;
+      }
+
+      /* Separator */
+      .section-sep {
+        stroke: #00ff88;
+        stroke-width: 1;
+        opacity: 0.08;
+      }
+
+      /* CRT pattern */
+      .crt-overlay { opacity: 0.3; }
+    </style>
+
+    <!-- ---- FILTERS ---- -->
+    <filter id="p-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="p-glow-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="p-shadow" x="-5%" y="-3%" width="110%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="p-card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- CRT scanline pattern -->
+    <pattern id="p-crt" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="transparent"/>
+      <rect y="2" width="4" height="2" fill="rgba(0,0,0,0.05)"/>
+    </pattern>
+
+    <!-- Gradient for background vignette -->
+    <radialGradient id="vignette" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.4"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ================================================================
+       LAYER 0: BACKGROUND
+       ================================================================ -->
+  <rect class="bg" width="900" height="1800"/>
+  <rect width="900" height="1800" fill="url(#vignette)"/>
+
+  <!-- Subtle grid lines -->
+  <g opacity="0.03">
+    <line x1="0" y1="0" x2="0" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="100" y1="0" x2="100" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="500" y1="0" x2="500" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="700" y1="0" x2="700" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="800" y1="0" x2="800" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="900" y1="0" x2="900" y2="1800" stroke="#00ff88" stroke-width="0.5"/>
+  </g>
+
+  <!-- Matrix rain columns (sparse, background decoration) -->
+  <g>
+    <text class="matrix-char mf1" x="50" y="0">
+      <tspan x="50" dy="16">0</tspan><tspan x="50" dy="16">ア</tspan><tspan x="50" dy="16">1</tspan>
+      <tspan x="50" dy="16">カ</tspan><tspan x="50" dy="16">0</tspan><tspan x="50" dy="16">サ</tspan>
+      <tspan x="50" dy="16">1</tspan><tspan x="50" dy="16">タ</tspan><tspan x="50" dy="16">0</tspan>
+      <tspan x="50" dy="16">ナ</tspan><tspan x="50" dy="16">1</tspan><tspan x="50" dy="16">ハ</tspan>
+    </text>
+    <text class="matrix-char mf2" x="150" y="0">
+      <tspan x="150" dy="16">1</tspan><tspan x="150" dy="16">ウ</tspan><tspan x="150" dy="16">0</tspan>
+      <tspan x="150" dy="16">エ</tspan><tspan x="150" dy="16">1</tspan><tspan x="150" dy="16">オ</tspan>
+      <tspan x="150" dy="16">0</tspan><tspan x="150" dy="16">キ</tspan><tspan x="150" dy="16">1</tspan>
+      <tspan x="150" dy="16">ク</tspan><tspan x="150" dy="16">0</tspan><tspan x="150" dy="16">ケ</tspan>
+    </text>
+    <text class="matrix-char mf3" x="280" y="0">
+      <tspan x="280" dy="16">ス</tspan><tspan x="280" dy="16">0</tspan><tspan x="280" dy="16">セ</tspan>
+      <tspan x="280" dy="16">1</tspan><tspan x="280" dy="16">ソ</tspan><tspan x="280" dy="16">0</tspan>
+      <tspan x="280" dy="16">チ</tspan><tspan x="280" dy="16">1</tspan><tspan x="280" dy="16">ツ</tspan>
+      <tspan x="280" dy="16">0</tspan><tspan x="280" dy="16">テ</tspan><tspan x="280" dy="16">1</tspan>
+    </text>
+    <text class="matrix-char mf1d" x="420" y="0">
+      <tspan x="420" dy="16">0</tspan><tspan x="420" dy="16">ヌ</tspan><tspan x="420" dy="16">1</tspan>
+      <tspan x="420" dy="16">ネ</tspan><tspan x="420" dy="16">0</tspan><tspan x="420" dy="16">ノ</tspan>
+      <tspan x="420" dy="16">1</tspan><tspan x="420" dy="16">ヒ</tspan><tspan x="420" dy="16">0</tspan>
+      <tspan x="420" dy="16">フ</tspan><tspan x="420" dy="16">1</tspan><tspan x="420" dy="16">ヘ</tspan>
+    </text>
+    <text class="matrix-char mf2d" x="560" y="0">
+      <tspan x="560" dy="16">1</tspan><tspan x="560" dy="16">ム</tspan><tspan x="560" dy="16">0</tspan>
+      <tspan x="560" dy="16">メ</tspan><tspan x="560" dy="16">1</tspan><tspan x="560" dy="16">モ</tspan>
+      <tspan x="560" dy="16">0</tspan><tspan x="560" dy="16">ラ</tspan><tspan x="560" dy="16">1</tspan>
+      <tspan x="560" dy="16">リ</tspan><tspan x="560" dy="16">0</tspan><tspan x="560" dy="16">ル</tspan>
+    </text>
+    <text class="matrix-char mf3d" x="680" y="0">
+      <tspan x="680" dy="16">レ</tspan><tspan x="680" dy="16">0</tspan><tspan x="680" dy="16">ロ</tspan>
+      <tspan x="680" dy="16">1</tspan><tspan x="680" dy="16">ワ</tspan><tspan x="680" dy="16">0</tspan>
+      <tspan x="680" dy="16">ヲ</tspan><tspan x="680" dy="16">1</tspan><tspan x="680" dy="16">ン</tspan>
+      <tspan x="680" dy="16">0</tspan><tspan x="680" dy="16">ア</tspan><tspan x="680" dy="16">1</tspan>
+    </text>
+    <text class="matrix-char mf1e" x="800" y="0">
+      <tspan x="800" dy="16">0</tspan><tspan x="800" dy="16">イ</tspan><tspan x="800" dy="16">1</tspan>
+      <tspan x="800" dy="16">ウ</tspan><tspan x="800" dy="16">0</tspan><tspan x="800" dy="16">エ</tspan>
+      <tspan x="800" dy="16">1</tspan><tspan x="800" dy="16">オ</tspan><tspan x="800" dy="16">0</tspan>
+      <tspan x="800" dy="16">カ</tspan><tspan x="800" dy="16">1</tspan><tspan x="800" dy="16">キ</tspan>
+    </text>
+    <text class="matrix-char mf2e" x="350" y="0">
+      <tspan x="350" dy="16">ク</tspan><tspan x="350" dy="16">1</tspan><tspan x="350" dy="16">ケ</tspan>
+      <tspan x="350" dy="16">0</tspan><tspan x="350" dy="16">コ</tspan><tspan x="350" dy="16">1</tspan>
+      <tspan x="350" dy="16">サ</tspan><tspan x="350" dy="16">0</tspan><tspan x="350" dy="16">シ</tspan>
+      <tspan x="350" dy="16">1</tspan><tspan x="350" dy="16">ス</tspan><tspan x="350" dy="16">0</tspan>
+    </text>
+    <text class="matrix-char mf3e" x="620" y="0">
+      <tspan x="620" dy="16">セ</tspan><tspan x="620" dy="16">0</tspan><tspan x="620" dy="16">ソ</tspan>
+      <tspan x="620" dy="16">1</tspan><tspan x="620" dy="16">タ</tspan><tspan x="620" dy="16">0</tspan>
+      <tspan x="620" dy="16">チ</tspan><tspan x="620" dy="16">1</tspan><tspan x="620" dy="16">ツ</tspan>
+      <tspan x="620" dy="16">0</tspan><tspan x="620" dy="16">テ</tspan><tspan x="620" dy="16">1</tspan>
+    </text>
+  </g>
+
+  <!-- CRT overlay -->
+  <rect width="900" height="1800" fill="url(#p-crt)" class="crt-overlay"/>
+
+  <!-- Scanline -->
+  <rect class="scanline-bar" x="0" y="0" width="900" height="6"/>
+
+  <!-- Corner decorations -->
+  <polyline class="corner-deco" points="20,50 20,20 50,20"/>
+  <polyline class="corner-deco" points="850,20 880,20 880,50"/>
+  <polyline class="corner-deco" points="880,1750 880,1780 850,1780"/>
+  <polyline class="corner-deco" points="50,1780 20,1780 20,1750"/>
+
+
+  <!-- ================================================================
+       SECTION 1: HERO / TERMINAL HEADER (0 - 420)
+       ================================================================ -->
+
+  <!-- Terminal window frame -->
+  <g class="fi1" filter="url(#p-shadow)">
+    <rect class="bg-dark" x="30" y="40" width="840" height="370" rx="12"/>
+    <rect class="term-frame" x="30" y="40" width="840" height="370" rx="12"/>
+
+    <!-- Title bar -->
+    <rect class="term-titlebar" x="30" y="40" width="840" height="36" rx="12"/>
+    <rect class="term-titlebar" x="30" y="65" width="840" height="11"/>
+    <line class="term-titlebar-line" x1="30" y1="76" x2="870" y2="76"/>
+    <circle class="btn-r" cx="52" cy="58" r="6"/>
+    <circle class="btn-y" cx="72" cy="58" r="6"/>
+    <circle class="btn-g" cx="92" cy="58" r="6"/>
+    <text class="titlebar-txt" x="450" y="62">nishant@dev ~ /home/nishant/profile</text>
+  </g>
+
+  <!-- ASCII Art Name -->
+  <g class="fi2" transform="translate(60, 100)" filter="url(#p-glow)">
+    <text class="ascii-large" x="0" y="0"> ███╗   ██╗██╗███████╗██╗  ██╗ █████╗ ███╗   ██╗████████╗</text>
+    <text class="ascii-large" x="0" y="13"> ████╗  ██║██║██╔════╝██║  ██║██╔══██╗████╗  ██║╚══██╔══╝</text>
+    <text class="ascii-large" x="0" y="26"> ██╔██╗ ██║██║███████╗███████║███████║██╔██╗ ██║   ██║</text>
+    <text class="ascii-large" x="0" y="39"> ██║╚██╗██║██║╚════██║██╔══██║██╔══██║██║╚██╗██║   ██║</text>
+    <text class="ascii-large" x="0" y="52"> ██║ ╚████║██║███████║██║  ██║██║  ██║██║ ╚████║   ██║</text>
+    <text class="ascii-large" x="0" y="65"> ╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝</text>
+  </g>
+
+  <!-- Subtitle info -->
+  <g class="fi3" transform="translate(60, 190)">
+    <text class="heading-sub" x="0" y="0">Full-Stack Developer</text>
+    <text class="out-gray" x="160" y="0"> | </text>
+    <text class="heading-sub" x="175" y="0">4x Hackathon Winner</text>
+    <text class="out-gray" x="340" y="0"> | </text>
+    <text class="heading-sub" x="355" y="0">Builder</text>
+  </g>
+
+  <!-- Terminal bio output -->
+  <g class="fi4" transform="translate(60, 225)">
+    <text class="prompt" x="0" y="0">$</text>
+    <text class="cmd" x="14" y="0">whoami</text>
+    <text class="out-green" x="0" y="18">B.Tech CSE @ DCRUST Murthal (2025-2028)</text>
+    <text class="out-green" x="0" y="34">Diploma in Computer Eng. @ GPMA — 80.85%</text>
+    <text class="out-green" x="0" y="50">Building hsbteleet.com, btechleet.com, and more</text>
+    <text class="out-green" x="0" y="66">26.5K+ search clicks | 316K+ impressions | 250+ pages</text>
+  </g>
+
+  <!-- Location & links -->
+  <g class="fi5" transform="translate(60, 310)">
+    <text class="prompt" x="0" y="0">$</text>
+    <text class="cmd" x="14" y="0">cat contact.json</text>
+    <text class="out-gray" x="0" y="18">{</text>
+    <text class="out-gray" x="14" y="34">"location":</text>
+    <text class="out-white" x="100" y="34">"Hisar, Haryana, India",</text>
+    <text class="out-gray" x="14" y="50">"email":</text>
+    <text class="out-cyan" x="100" y="50">"contact@itsnishant.com",</text>
+    <text class="out-gray" x="14" y="66">"web":</text>
+    <text class="out-cyan" x="100" y="66">"itsnishant.com",</text>
+    <text class="out-gray" x="14" y="82">"github":</text>
+    <text class="out-cyan" x="100" y="82">"itsnishant089"</text>
+    <text class="out-gray" x="0" y="98">}</text>
+  </g>
+
+  <!-- Cursor -->
+  <g class="fi6" transform="translate(60, 395)">
+    <text class="prompt" x="0" y="0">$</text>
+    <rect class="cursor" x="14" y="-10" width="8" height="14"/>
+  </g>
+
+
+  <!-- ================================================================
+       SECTION 2: ABOUT & QUICK STATS (420 - 620)
+       ================================================================ -->
+
+  <line class="section-sep" x1="30" y1="430" x2="870" y2="430"/>
+
+  <g transform="translate(450, 460)">
+    <text class="section-header" text-anchor="middle" y="0" filter="url(#p-glow)">// ABOUT_ME</text>
+    <text class="section-sub" text-anchor="middle" y="20">A quick snapshot of who I am and what I build</text>
+  </g>
+
+  <!-- Stats cards row -->
+  <g class="float-1" transform="translate(30, 500)">
+    <!-- Card 1: Diploma Score -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="0" width="195" height="90"/>
+      <rect class="glass-border-green" x="0" y="0" width="195" height="90"/>
+      <rect class="glass-shimmer" x="0" y="0" width="195" height="90"/>
+      <text class="card-stat" x="97" y="40">80.85%</text>
+      <text class="card-stat-label" x="97" y="58">Diploma Score</text>
+      <text class="card-stat-label" x="97" y="72">GPMA Haryana</text>
+    </g>
+
+    <!-- Card 2: Hackathon Wins -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="215" y="0" width="195" height="90"/>
+      <rect class="glass-border-cyan" x="215" y="0" width="195" height="90"/>
+      <rect class="glass-shimmer" x="215" y="0" width="195" height="90"/>
+      <text class="card-stat" x="312" y="40" fill="#00c6ff">4x</text>
+      <text class="card-stat-label" x="312" y="58">Hackathon Winner</text>
+      <text class="card-stat-label" x="312" y="72">3x Finalist</text>
+    </g>
+
+    <!-- Card 3: Search Clicks -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="430" y="0" width="195" height="90"/>
+      <rect class="glass-border-green" x="430" y="0" width="195" height="90"/>
+      <rect class="glass-shimmer" x="430" y="0" width="195" height="90"/>
+      <text class="card-stat" x="527" y="40">26.5K+</text>
+      <text class="card-stat-label" x="527" y="58">Search Clicks</text>
+      <text class="card-stat-label" x="527" y="72">hsbteleet.com</text>
+    </g>
+
+    <!-- Card 4: Pages -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="645" y="0" width="195" height="90"/>
+      <rect class="glass-border-cyan" x="645" y="0" width="195" height="90"/>
+      <rect class="glass-shimmer" x="645" y="0" width="195" height="90"/>
+      <text class="card-stat" x="742" y="40" fill="#00c6ff">250+</text>
+      <text class="card-stat-label" x="742" y="58">Content Pages</text>
+      <text class="card-stat-label" x="742" y="72">Shipped</text>
+    </g>
+  </g>
+
+
+  <!-- ================================================================
+       SECTION 3: FEATURED PROJECTS (620 - 1000)
+       ================================================================ -->
+
+  <line class="section-sep" x1="30" y1="620" x2="870" y2="620"/>
+
+  <g transform="translate(450, 650)">
+    <text class="section-header" text-anchor="middle" y="0" filter="url(#p-glow)">// PROJECTS</text>
+    <text class="section-sub" text-anchor="middle" y="20">Production products with real users and measurable outcomes</text>
+  </g>
+
+  <!-- Project Card 1: btechleet.com -->
+  <g class="float-2" transform="translate(30, 690)">
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="0" width="410" height="150"/>
+      <rect class="glass-border-green" x="0" y="0" width="410" height="150"/>
+    </g>
+    <text class="card-title" x="18" y="28">btechleet.com</text>
+    <text class="card-tag" x="150" y="28">LIVE</text>
+    <text class="card-desc" x="18" y="48">All-India B.Tech Lateral Entry Platform</text>
+    <text class="card-desc" x="18" y="62">Mapping 28 states and 8 UTs for diploma-</text>
+    <text class="card-desc" x="18" y="76">to-degree transitions. AI counseling, cutoff</text>
+    <text class="card-desc" x="18" y="90">predictors, PYQs, and workspace dashboards.</text>
+
+    <!-- Tech tags -->
+    <rect fill="#0f172a" x="18" y="102" width="55" height="18" rx="4"/>
+    <text class="card-tag" x="45" y="115" text-anchor="middle">Next.js</text>
+    <rect fill="#0f172a" x="80" y="102" width="72" height="18" rx="4"/>
+    <text class="card-tag" x="116" y="115" text-anchor="middle">Payload CMS</text>
+    <rect fill="#0f172a" x="159" y="102" width="68" height="18" rx="4"/>
+    <text class="card-tag" x="193" y="115" text-anchor="middle">PostgreSQL</text>
+    <rect fill="#0f172a" x="234" y="102" width="48" height="18" rx="4"/>
+    <text class="card-tag" x="258" y="115" text-anchor="middle">Prisma</text>
+    <rect fill="#0f172a" x="289" y="102" width="38" height="18" rx="4"/>
+    <text class="card-tag" x="308" y="115" text-anchor="middle">AWS</text>
+    <rect fill="#0f172a" x="334" y="102" width="55" height="18" rx="4"/>
+    <text class="card-tag" x="361" y="115" text-anchor="middle">Razorpay</text>
+
+    <!-- Project metrics -->
+    <text class="out-gray" x="18" y="140">All-India | 28 States | AI Guidance | Dashboard</text>
+  </g>
+
+  <!-- Project Card 2: hsbteleet.com -->
+  <g class="float-3" transform="translate(460, 690)">
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="0" width="410" height="150"/>
+      <rect class="glass-border-cyan" x="0" y="0" width="410" height="150"/>
+    </g>
+    <text class="card-title" x="18" y="28">hsbteleet.com</text>
+    <text class="card-tag" x="150" y="28">LIVE • 26.5K+ CLICKS</text>
+    <text class="card-desc" x="18" y="48">LEET &amp; HSBTE Exam Platform for Haryana</text>
+    <text class="card-desc" x="18" y="62">250+ content pages, browser PYQ quiz engine,</text>
+    <text class="card-desc" x="18" y="76">AI chatbot via Gemini API, rank predictor,</text>
+    <text class="card-desc" x="18" y="90">referral flows, admin portal. 316K+ impressions.</text>
+
+    <!-- Tech tags -->
+    <rect fill="#0f172a" x="18" y="102" width="62" height="18" rx="4"/>
+    <text class="card-tag" x="49" y="115" text-anchor="middle">Supabase</text>
+    <rect fill="#0f172a" x="87" y="102" width="55" height="18" rx="4"/>
+    <text class="card-tag" x="114" y="115" text-anchor="middle">Razorpay</text>
+    <rect fill="#0f172a" x="149" y="102" width="66" height="18" rx="4"/>
+    <text class="card-tag" x="182" y="115" text-anchor="middle">Gemini API</text>
+    <rect fill="#0f172a" x="222" y="102" width="48" height="18" rx="4"/>
+    <text class="card-tag" x="246" y="115" text-anchor="middle">Vercel</text>
+    <rect fill="#0f172a" x="277" y="102" width="55" height="18" rx="4"/>
+    <text class="card-tag" x="304" y="115" text-anchor="middle">EmailJS</text>
+
+    <text class="out-gray" x="18" y="140">Haryana | 10 PYQ Papers | Rank Predictor | Admin</text>
+  </g>
+
+  <!-- Project Card 3: Roshni Creations -->
+  <g class="float-1" transform="translate(30, 860)">
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="0" width="410" height="120"/>
+      <rect class="glass-border-green" x="0" y="0" width="410" height="120"/>
+    </g>
+    <text class="card-title" x="18" y="28">Roshni Creations</text>
+    <text class="card-tag" x="170" y="28">LIVE</text>
+    <text class="card-desc" x="18" y="48">Premium jewellery e-commerce with mobile-first</text>
+    <text class="card-desc" x="18" y="62">navigation, Instagram-style reels, live gold/silver</text>
+    <text class="card-desc" x="18" y="76">pricing, Razorpay checkout, and 3D previews.</text>
+
+    <rect fill="#0f172a" x="18" y="90" width="55" height="18" rx="4"/>
+    <text class="card-tag" x="45" y="103" text-anchor="middle">React 18</text>
+    <rect fill="#0f172a" x="80" y="90" width="38" height="18" rx="4"/>
+    <text class="card-tag" x="99" y="103" text-anchor="middle">Vite</text>
+    <rect fill="#0f172a" x="125" y="90" width="60" height="18" rx="4"/>
+    <text class="card-tag" x="155" y="103" text-anchor="middle">Tailwind</text>
+    <rect fill="#0f172a" x="192" y="90" width="55" height="18" rx="4"/>
+    <text class="card-tag" x="219" y="103" text-anchor="middle">Firebase</text>
+    <rect fill="#0f172a" x="254" y="90" width="75" height="18" rx="4"/>
+    <text class="card-tag" x="291" y="103" text-anchor="middle">Model Viewer</text>
+  </g>
+
+  <!-- Project Card 4: EdgePay -->
+  <g class="float-2" transform="translate(460, 860)">
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="0" width="410" height="120"/>
+      <rect class="glass-border-cyan" x="0" y="0" width="410" height="120"/>
+    </g>
+    <text class="card-title" x="18" y="28">EdgePay</text>
+    <text class="card-tag" x="90" y="28">HACKATHON WINNER</text>
+    <text class="card-desc" x="18" y="48">Offline-first UPI payment app for rural India</text>
+    <text class="card-desc" x="18" y="62">using USSD and GSM infrastructure. Designed</text>
+    <text class="card-desc" x="18" y="76">for areas with limited connectivity.</text>
+
+    <rect fill="#0f172a" x="18" y="90" width="58" height="18" rx="4"/>
+    <text class="card-tag" x="47" y="103" text-anchor="middle">Offline UPI</text>
+    <rect fill="#0f172a" x="83" y="90" width="40" height="18" rx="4"/>
+    <text class="card-tag" x="103" y="103" text-anchor="middle">USSD</text>
+    <rect fill="#0f172a" x="130" y="90" width="38" height="18" rx="4"/>
+    <text class="card-tag" x="149" y="103" text-anchor="middle">GSM</text>
+    <rect fill="#0f172a" x="175" y="90" width="60" height="18" rx="4"/>
+    <text class="card-tag" x="205" y="103" text-anchor="middle">Rural India</text>
+  </g>
+
+
+  <!-- ================================================================
+       SECTION 4: TECH STACK HIGHLIGHT (1000 - 1200)
+       ================================================================ -->
+
+  <line class="section-sep" x1="30" y1="1010" x2="870" y2="1010"/>
+
+  <g transform="translate(450, 1040)">
+    <text class="section-header" text-anchor="middle" y="0" filter="url(#p-glow)">// TECH_STACK</text>
+    <text class="section-sub" text-anchor="middle" y="20">Core technologies powering production builds</text>
+  </g>
+
+  <!-- Tech stack grid - Row 1 -->
+  <g class="float-3" transform="translate(30, 1080)">
+    <!-- Python -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-green" x="0" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="47" y="35">&#x1F40D;</text>
+      <text class="tech-name-text" x="47" y="56">Python</text>
+    </g>
+    <!-- TypeScript -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="108" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-cyan" x="108" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="155" y="35" fill="#00c6ff">TS</text>
+      <text class="tech-name-text" x="155" y="56">TypeScript</text>
+    </g>
+    <!-- React -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="216" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-green" x="216" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="263" y="35">&#x269B;</text>
+      <text class="tech-name-text" x="263" y="56">React</text>
+    </g>
+    <!-- Next.js -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="324" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-cyan" x="324" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="371" y="35" fill="#e2e8f0">N</text>
+      <text class="tech-name-text" x="371" y="56">Next.js</text>
+    </g>
+    <!-- Supabase -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="432" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-green" x="432" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="479" y="35">&#x1F6E1;</text>
+      <text class="tech-name-text" x="479" y="56">Supabase</text>
+    </g>
+    <!-- PostgreSQL -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="540" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-cyan" x="540" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="587" y="35">&#x1F418;</text>
+      <text class="tech-name-text" x="587" y="56">PostgreSQL</text>
+    </g>
+    <!-- Firebase -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="648" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-green" x="648" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="695" y="35">&#x1F525;</text>
+      <text class="tech-name-text" x="695" y="56">Firebase</text>
+    </g>
+    <!-- Vercel -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="756" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-cyan" x="756" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="803" y="35">&#x25B2;</text>
+      <text class="tech-name-text" x="803" y="56">Vercel</text>
+    </g>
+  </g>
+
+  <!-- Tech stack grid - Row 2 -->
+  <g class="float-1" transform="translate(30, 1165)">
+    <!-- Tailwind -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-cyan" x="0" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="47" y="35" fill="#00c6ff">&#x1F3A8;</text>
+      <text class="tech-name-text" x="47" y="56">Tailwind</text>
+    </g>
+    <!-- Vite -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="108" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-green" x="108" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="155" y="35">&#x26A1;</text>
+      <text class="tech-name-text" x="155" y="56">Vite</text>
+    </g>
+    <!-- Prisma -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="216" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-cyan" x="216" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="263" y="35" fill="#00c6ff">&#x25B3;</text>
+      <text class="tech-name-text" x="263" y="56">Prisma</text>
+    </g>
+    <!-- AWS -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="324" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-green" x="324" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="371" y="35">&#x2601;</text>
+      <text class="tech-name-text" x="371" y="56">AWS</text>
+    </g>
+    <!-- Cloudflare -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="432" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-cyan" x="432" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="479" y="35" fill="#00c6ff">&#x1F6E1;</text>
+      <text class="tech-name-text" x="479" y="56">Cloudflare</text>
+    </g>
+    <!-- Razorpay -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="540" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-green" x="540" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="587" y="35">&#x1F4B3;</text>
+      <text class="tech-name-text" x="587" y="56">Razorpay</text>
+    </g>
+    <!-- Git -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="648" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-cyan" x="648" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="695" y="35" fill="#00c6ff">&#x1F4BB;</text>
+      <text class="tech-name-text" x="695" y="56">Git</text>
+    </g>
+    <!-- Gemini API -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="756" y="0" width="95" height="70" rx="8" ry="8"/>
+      <rect class="glass-border-green" x="756" y="0" width="95" height="70" rx="8" ry="8"/>
+      <text class="tech-icon-text" x="803" y="35">&#x2728;</text>
+      <text class="tech-name-text" x="803" y="56">Gemini AI</text>
+    </g>
+  </g>
+
+
+  <!-- ================================================================
+       SECTION 5: EDUCATION TIMELINE (1250 - 1450)
+       ================================================================ -->
+
+  <line class="section-sep" x1="30" y1="1260" x2="870" y2="1260"/>
+
+  <g transform="translate(450, 1290)">
+    <text class="section-header" text-anchor="middle" y="0" filter="url(#p-glow)">// EDUCATION</text>
+    <text class="section-sub" text-anchor="middle" y="20">Academic journey from diploma to degree</text>
+  </g>
+
+  <!-- Timeline -->
+  <g transform="translate(100, 1330)">
+    <!-- Timeline line -->
+    <line class="tl-line" x1="0" y1="0" x2="0" y2="140"/>
+
+    <!-- Entry 1: B.Tech -->
+    <circle class="tl-node" cx="0" cy="15" r="5"/>
+    <g transform="translate(20, 5)">
+      <text class="timeline-text" x="0" y="0">B.Tech CSE — DCRUST Murthal</text>
+      <text class="timeline-date" x="0" y="16">August 2025 – June 2028</text>
+      <text class="timeline-detail" x="0" y="30">Pursuing • Murthal, Haryana</text>
+    </g>
+
+    <!-- Entry 2: Diploma -->
+    <circle class="tl-node-cyan" cx="0" cy="85" r="5"/>
+    <g transform="translate(20, 75)">
+      <text class="timeline-text" x="0" y="0">Diploma in Computer Eng. — GPMA</text>
+      <text class="timeline-date" x="0" y="16">August 2022 – July 2025 • 80.85%</text>
+      <text class="timeline-detail" x="0" y="30">Completed • Govt. Polytechnic, Mandi Adampur</text>
+    </g>
+  </g>
+
+
+  <!-- ================================================================
+       SECTION 6: ACHIEVEMENTS (1460 - 1650)
+       ================================================================ -->
+
+  <line class="section-sep" x1="30" y1="1490" x2="870" y2="1490"/>
+
+  <g transform="translate(450, 1520)">
+    <text class="section-header" text-anchor="middle" y="0" filter="url(#p-glow)">// ACHIEVEMENTS</text>
+    <text class="section-sub" text-anchor="middle" y="20">Competition wins and key milestones</text>
+  </g>
+
+  <!-- Achievement cards - 2x2 grid -->
+  <g class="float-2" transform="translate(30, 1555)">
+    <!-- Win 1: Orbix -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="0" width="410" height="65"/>
+      <rect fill="none" stroke="#ffd700" stroke-width="1" x="0" y="0" width="410" height="65" rx="10" ry="10" opacity="0.4"/>
+      <text class="card-title" x="18" y="24" fill="#ffd700">1st Place — Orbix Hackathon</text>
+      <text class="card-desc" x="18" y="42">IIIT Delhi • Built innovative solution under pressure</text>
+      <text class="card-tag" x="18" y="56" fill="#ffd700">GOLD</text>
+    </g>
+
+    <!-- Win 2: Evolothon -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="80" width="410" height="65"/>
+      <rect fill="none" stroke="#c0c0c0" stroke-width="1" x="0" y="80" width="410" height="65" rx="10" ry="10" opacity="0.4"/>
+      <text class="card-title" x="18" y="104" fill="#c0c0c0">2nd Place — Evolothon 1.0</text>
+      <text class="card-desc" x="18" y="122">Evolotek • Impactful product pitch</text>
+      <text class="card-tag" x="18" y="136" fill="#c0c0c0">SILVER</text>
+    </g>
+  </g>
+
+  <g class="float-3" transform="translate(460, 1555)">
+    <!-- Win 3: HACKRUST -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="0" width="410" height="65"/>
+      <rect fill="none" stroke="#c0c0c0" stroke-width="1" x="0" y="0" width="410" height="65" rx="10" ry="10" opacity="0.4"/>
+      <text class="card-title" x="18" y="24" fill="#c0c0c0">2nd Place — HACKRUST</text>
+      <text class="card-desc" x="18" y="42">DCRUST • EdgePay offline UPI concept</text>
+      <text class="card-tag" x="18" y="56" fill="#c0c0c0">SILVER</text>
+    </g>
+
+    <!-- Win 4: Technophilia -->
+    <g filter="url(#p-card-shadow)">
+      <rect class="glass-card" x="0" y="80" width="410" height="65"/>
+      <rect fill="none" stroke="#c0c0c0" stroke-width="1" x="0" y="80" width="410" height="65" rx="10" ry="10" opacity="0.4"/>
+      <text class="card-title" x="18" y="104" fill="#c0c0c0">2nd Place — Technophilia 7.0</text>
+      <text class="card-desc" x="18" y="122">University of Delhi • Competitive project</text>
+      <text class="card-tag" x="18" y="136" fill="#c0c0c0">SILVER</text>
+    </g>
+  </g>
+
+
+  <!-- ================================================================
+       SECTION 7: FOOTER (1700 - 1800)
+       ================================================================ -->
+
+  <line class="section-sep" x1="30" y1="1710" x2="870" y2="1710"/>
+
+  <!-- Footer info -->
+  <g transform="translate(450, 1740)">
+    <text class="section-sub" text-anchor="middle" y="0">itsnishant.com • contact@itsnishant.com • github.com/itsnishant089</text>
+    <text class="out-gray" text-anchor="middle" y="20" font-family="'Courier New', monospace" font-size="10">Built with care. Shipped in public. Optimized for real visitors.</text>
+  </g>
+
+  <!-- Bottom neon accent -->
+  <line class="neon-line-accent" x1="30" y1="1780" x2="870" y2="1780" filter="url(#p-glow)"/>
+
+  <!-- Final cursor -->
+  <g transform="translate(435, 1770)">
+    <text class="prompt" x="0" y="0">$</text>
+    <rect class="cursor" x="14" y="-10" width="8" height="14"/>
+  </g>
+
+</svg>
