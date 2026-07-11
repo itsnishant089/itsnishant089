@@ -53,6 +53,8 @@ jobs:
     name: Generate GitHub Metrics
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # Only runs if you've added a METRICS_TOKEN secret (see README for setup)
+    if: ${{ secrets.METRICS_TOKEN != '' }}
 
     steps:
       - name: Checkout repository
