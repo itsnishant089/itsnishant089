@@ -429,7 +429,7 @@
       .crt-overlay { opacity: 0.3; }
     </style>
 
-    <!-- ---- FILTERS ---- -->
+    <!-- FILTERS -->
     <filter id="p-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
       <feMerge>
