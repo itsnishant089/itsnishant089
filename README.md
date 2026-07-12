@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://itsnishant.com">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00FF88&center=true&vCenter=true&width=800&lines=Full-Stack+Developer+%7C+React+%26+Next.js;4x+Hackathon+Winner+%7C+Problem+Solver;B.Tech+CSE+%40+DCRUST+Murthal;Building+Products+That+Matter" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=700&amp;size=22&amp;pause=1000&amp;color=00FF88&amp;center=true&amp;vCenter=true&amp;width=800&amp;lines=Full-Stack+Developer+%7C+React+%26+Next.js;4x+Hackathon+Winner+%7C+Problem+Solver;B.Tech+CSE+%40+DCRUST+Murthal;Building+Products+That+Matter" alt="Typing SVG" />
   </a>
 </div>
 
@@ -108,16 +108,16 @@ drwxr-xr-x 2 nishant dev 4096 Jul 2023 NSS_Volunteer_Leader (Led 100+ volunteers
 
 <div align="center">
   <a href="https://github.com/itsnishant089">
-    <img src="https://github-readme-stats.vercel.app/api?username=itsnishant089&theme=tokyonight&show_icons=true&hide_border=true&bg_color=0D1117&ring_color=00FF88&title_color=00FF88" alt="GitHub Stats" />
+    <img src="https://github-readme-stats.vercel.app/api?username=itsnishant089&amp;theme=tokyonight&amp;show_icons=true&amp;hide_border=true&amp;bg_color=0D1117&amp;ring_color=00FF88&amp;title_color=00FF88" alt="GitHub Stats" />
   </a>
   <a href="https://github.com/itsnishant089">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=itsnishant089&theme=tokyonight&hide_border=true&background=0D1117&ring=00FF88&fire=00FF88&currStreakNum=00c6ff" alt="GitHub Streak" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=itsnishant089&amp;theme=tokyonight&amp;hide_border=true&amp;background=0D1117&amp;ring=00FF88&amp;fire=00FF88&amp;currStreakNum=00c6ff" alt="GitHub Streak" />
   </a>
 </div>
 
 <div align="center">
   <br>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsnishant089&theme=tokyonight&hide_border=true&layout=compact&bg_color=0D1117&title_color=00FF88" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsnishant089&amp;theme=tokyonight&amp;hide_border=true&amp;layout=compact&amp;bg_color=0D1117&amp;title_color=00FF88" alt="Top Languages" />
 </div>
 
 <div align="center">
@@ -133,7 +133,7 @@ drwxr-xr-x 2 nishant dev 4096 Jul 2023 NSS_Volunteer_Leader (Led 100+ volunteers
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=itsnishant089&label=PROFILE+VIEWS&color=00ff88&style=flat-square" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=itsnishant089&amp;label=PROFILE+VIEWS&amp;color=00ff88&amp;style=flat-square" alt="Profile Views" />
   <br><br>
   <p><i>"First, Solve the problem. Then, Write the code."</i></p>
   <br>
